@@ -1,9 +1,9 @@
 # Vorgon Clicker
-> 
-1. Team Members: Miguel Garcia, Nigel Bonnain, Joseph DeCarlo, Sergio Gutierrez, Hugo Sanchez
-2. We are creating an idle clicker game for everyone.
-3. For everyone
-4. To elimate boredom and pass time
+
+> 1. Team Members: Miguel Garcia, Nigel Bonnain, Joseph DeCarlo, Sergio Gutierrez, Hugo Sanchez
+> 2. We are creating an idle clicker game for everyone.
+> 3. For everyone
+> 4. To elimate boredom and pass time
 
 ## Table of contents
 * [General info](#general-info)
