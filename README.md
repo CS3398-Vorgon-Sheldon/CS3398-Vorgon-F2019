@@ -3,7 +3,7 @@
 > 1. Team Members: Miguel Garcia, Nigel Bonnain, Joseph DeCarlo, Sergio Gutierrez, Hugo Sanchez
 > 2. We are creating an idle clicker game for everyone.
 > 3. For everyone
-> 4. To elimate boredom and pass time
+> 4. To eliminate boredom and pass time with an ever growing number.
 
 ## Table of contents
 * [General info](#general-info)
