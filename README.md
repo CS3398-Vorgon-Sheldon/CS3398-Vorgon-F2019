@@ -11,7 +11,7 @@
 * [Features](#features)
 
 ## General info
-
+![Icon Image] http://icons.iconarchive.com/icons/iconsmind/outline/256/Cursor-Click-2-icon.png
 
 ## Technologies
 * Tech 1 - HTML, CSS, PHP, JavaScript
