@@ -11,7 +11,7 @@
 * [Features](#features)
 
 ## General info
-![Icon Image] ProjectIcon.png
+![Icon Image] (ProjectIcon.png)
 
 ## Technologies
 * Tech 1 - HTML, CSS, PHP, JavaScript
