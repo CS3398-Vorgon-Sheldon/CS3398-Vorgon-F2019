@@ -1,0 +1,26 @@
+Theme: Computer Science Engineers
+
+Summary: Press the "Work button" to accumulate "work time". As work time increases "clients" come in asking you to do work for them.
+	All the work time you've accumulated up till now can be used to complete these jobs rewarding "dollars". Dollars will be the currency to pay for items in the shop.
+	The shop will house upgrades. First tier of upgrades will be focused solely on making the work button accumulate work time faster. Additive, multiplicative, "critical presses".
+	Second tier of upgrades will get you employees. Employees accumulate work time without hitting the work button. 
+	Upgrades in this tier will consist of increasing maximum workers available, increasing work time per worker, and the level up effects. (If worker A has worked enough then they reach level 2 and gain stats)
+	Clients will work in tiered system, tier 1 we do jobs for students, then more advanced placements CS I, CSII, Data Structs, Software Design, etc... Till we reach The next tier.
+	Tier 2 of clients can be businesses who pay more on their projects. Tier 3 may be government jobs. Flavor text can be parody of real world companies, and going through classes.
+
+Base Features:
+-Currencies
+	Work Time
+	Money (Dollars)
+-Mechanics
+	Work Button
+	Clients
+	Employees
+
+More To think about: Prestige function
+
+Stretch Goals: Down the line we may add different kinds of Employees. For example, Accountants who increase money gain per client job.
+	Another example would be hiring tiers, and "promotions" Tier 1 worker gets x amount but when he reaches max level, promote him to manager and he can train his own team of employees that won't add to your counter of max employees.
+	Mentioned contracts in class that act like jobs but are only available for limited amount of time.
+
+	
