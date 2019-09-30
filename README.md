@@ -14,7 +14,7 @@
 ![Icon Image](./img/ProjectIcon.png)
 
 ## Technologies
-* Tech 1 - HTML, CSS, PHP, JavaScript
+* Tech 1 - Java
 
 
 ## Features
