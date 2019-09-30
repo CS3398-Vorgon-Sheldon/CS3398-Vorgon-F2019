@@ -1,0 +1,22 @@
+Things to keep in mind when creating the user interface:
+    - Keep it simple, we do not want the user to be overwhelmed when navigating
+      around the game.
+    - Consistency is important; graphic elements and functionality should be
+      consistent across the program.
+    - Minimize the need to recall information. Everything should be straight
+      forward.
+    - Less is more. Less clutter provides a better user experience.
+
+Design decisions that we will have to make and other notes:
+    - Do we want clean menus - with each feature implementation being a new
+      page?
+    - Or do we want to minimize the amount of pages - and design the interface
+      in a way that displays most information cleanly in a main screen?
+    - Is there an approach or design that fits in with our theme more?
+    - Are there any limitations that we need to keep in mind when designing the
+      GUI? (prevent possible roadblocks)
+
+Personal take:
+    - After some short discussion, we as a team should have an overall idea on
+      how we want the user interface to be. Once we have this image in our heads
+      we should be able to approach any design choices with confidence.
