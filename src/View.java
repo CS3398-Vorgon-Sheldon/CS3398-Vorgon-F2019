@@ -7,9 +7,11 @@ public class View extends JFrame implements ActionListener {
     private int workHours;
     private int money;
     private int prestige;
+    private int level;
 
     JLabel workLabel = new JLabel("Hours worked: " + String.valueOf(workHours));
     JLabel moneyLabel = new JLabel("Dollars: $" + String.valueOf(money));
+    JLabel levelLabel = new JLabel("Current level: " + String.valueOf(level));
 
     JButton jobButton = new JButton("Do job");
     JButton powerButton = new JButton("Power up!");
@@ -41,6 +43,7 @@ public class View extends JFrame implements ActionListener {
     public View(Controller c)throws Exception{
         int workHours = c.player.getWorkHours();
         int money = c.player.getMoney();
+        int level = c.player.getLevel();
 
         setTitle("Vorgon Clicker!");
         setSize(750,750); // subject to change
@@ -51,8 +54,10 @@ public class View extends JFrame implements ActionListener {
         topPanel.setBackground(Color.darkGray);
         workLabel.setForeground(Color.white);
         moneyLabel.setForeground(Color.white);
+        levelLabel.setForeground(Color.white);
         topPanel.add(workLabel, BorderLayout.WEST);
         topPanel.add(moneyLabel, BorderLayout.CENTER);
+        topPanel.add(levelLabel, BorderLayout.EAST);
 
         getContentPane().add(topPanel, BorderLayout.PAGE_START);
 

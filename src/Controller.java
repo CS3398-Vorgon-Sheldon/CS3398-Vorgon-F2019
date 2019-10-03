@@ -28,6 +28,8 @@ public class Controller implements MouseListener {
         if(SwingUtilities.isLeftMouseButton(e)){
             player.updateWorkHours(1);
             view.workLabel.setText("Hours Worked: " + String.valueOf(player.getWorkHours()));
+            player.updateLevel(player.getWorkHours());
+            view.levelLabel.setText("Current Level: " + String.valueOf(player.getLevel()));
         } else if(SwingUtilities.isRightMouseButton(e)){
 
         }

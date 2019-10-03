@@ -4,6 +4,7 @@ public class Player {
     private int workHours;
     private int money;
     private int prestige;
+    private int level;                                        //level is calculated by hours worked to unlock 
     // array of current upgrades
     //private Upgrades upgrades[];
     private boolean debug = true;
@@ -13,6 +14,7 @@ public class Player {
         workHours = 0;
         money = 0;
         clickPower = 1;
+        level = 1;                                           //level will unlock the powerups you can buy in shop
     }
 
     public void updateWorkHours(int amount) {
@@ -26,6 +28,21 @@ public class Player {
     public int getWorkHours(){ return workHours; }
     // this is called constantly, use to update balance
     public int getMoney(){ return money; }
+    
+    public void updateLevel(int hrs) {                    //updates and calculates for next level
+    	int xpNeeded = ((level * level) * 50);
+        if (hrs == xpNeeded)
+        {
+        	level++;
+        }
+        displayLevel();
+    }
+    
+    public void displayLevel(){
+        System.out.println("Current Level: " + level);      
+    }
+    
+    public int getLevel(){ return level; }
 
     /*
     Only called during a reset or "ascension". Adds prestige currency
