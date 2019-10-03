@@ -7,8 +7,8 @@ public class View extends JFrame implements ActionListener {
     private int workHours;
     private int money;
 
-    JLabel workLabel = new JLabel("Hours Worked: " + String.valueOf(workHours), SwingConstants.CENTER);
-    JLabel moneyLabel = new JLabel("Dollars: $" + String.valueOf(money), SwingConstants.CENTER);
+    JLabel workLabel = new JLabel("Hours worked: " + String.valueOf(workHours));
+    JLabel moneyLabel = new JLabel("Dollars: $" + String.valueOf(money));
 
     JButton jobButton = new JButton("Do job");
     JButton powerButton = new JButton("Power up!");
@@ -39,17 +39,19 @@ public class View extends JFrame implements ActionListener {
 
     public View(Controller c)throws Exception{
         int workHours = c.player.getWorkHours();
+        int money = c.player.getMoney();
 
         setTitle("Vorgon Clicker!");
         setSize(750,750); // subject to change
         getContentPane().add(new MyPanel(c), BorderLayout.CENTER);
 
+
         JPanel topPanel = new JPanel();
         topPanel.setBackground(Color.darkGray);
         workLabel.setForeground(Color.white);
         moneyLabel.setForeground(Color.white);
-        topPanel.add(workLabel);
-        topPanel.add(moneyLabel);
+        topPanel.add(workLabel, BorderLayout.WEST);
+        topPanel.add(moneyLabel, BorderLayout.CENTER);
 
         getContentPane().add(topPanel, BorderLayout.PAGE_START);
 
