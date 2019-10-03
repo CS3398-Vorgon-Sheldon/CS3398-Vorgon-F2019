@@ -1,0 +1,33 @@
+Obstables to overcome and decisions to make when implementing leaderboard:
+    - Must have player statistics implemented, which will be the base of the
+      game's leaderboard.
+    - Will the leaderboard have online functionality, or will scores be compared
+      on a local-game basis?
+    - Will a simple list of scores suffice, or would implementing a database be
+      beneficial to our final product?
+      - Which is more efficient?
+    - If necessary, how will we combat leaderboard cheating or hacking? Is this
+      issue serious enough to hinder the experience?
+    - Should there be a set number of leaderboard positions, or should it be an
+      ongoing list in its entirety?
+    - If 2 players get the same score, how should the tie be handled?
+    - Scores will continue to grow, so "battling" others to the top is a
+      valuable feature to have. It creates goals and keeps the fun going.
+
+Brainstorm of our leaderboard implementation:
+    - Dollars acquired and hours worked are the 2 main score factors.
+    - A local leaderboard will suit our first iteration well.
+      - This can be a list/text file to start with.
+      - If online functionality is implemented, then refactoring to use a
+        database would be very helpful.
+    - Hours worked will be the main competing number. Dollars/money will be
+      noted next to the compared hours worked number.
+    - Leaderboard can be accessed by clicking on player statistics.
+    - First implementation will not combat cheating/hacking.
+    - If one player ties with another, the player who reached that score first
+      will be in the higher position. The place number will not be the same,
+      they will be sequential.
+    - A comperator class/function will have to be created to properly compared
+      scores and to do so efficiently.
+    - When save/load functionality is implemented, on save the leaderboard shall
+    be updated to ensure no data/score is lost.
