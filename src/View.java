@@ -23,7 +23,10 @@ public class View extends JFrame implements ActionListener {
 
     String jobOptions[] = { "Job 1", "Job 2", "Job 3" };
     String powerOptions[] = { "Power up 1", "Power up 2", "Power up 3" };
-    String shopOptions[] = { "Item 1", "Item 2", "Item 3" };
+    
+    String shopOptions[] = {"Plus 1: $20", 
+							"Auto Clicks: $50", 
+							"Employee Upgrade: $100" };
 
     private class MyPanel extends JPanel {
         Controller controller;
@@ -80,7 +83,11 @@ public class View extends JFrame implements ActionListener {
         gbc.fill = GridBagConstraints.HORIZONTAL;
         gbc.gridx = 0;
         gbc.gridy++;
-        sidePanel.add(new JComboBox<>(jobOptions), gbc);
+        
+        JComboBox jobBox = new JComboBox(jobOptions);
+        //sidePanel.add(new JComboBox<>(jobOptions), gbc);
+        sidePanel.add(jobBox, gbc);
+        
         gbc.gridx = 1;
         sidePanel.add(jobButton, gbc);
         gbc.gridx = 0;
@@ -94,7 +101,11 @@ public class View extends JFrame implements ActionListener {
         gbc.fill = GridBagConstraints.HORIZONTAL;
         gbc.gridx = 0;
         gbc.gridy++;
-        sidePanel.add(new JComboBox<>(powerOptions), gbc);
+        
+        JComboBox powerBox = new JComboBox(powerOptions);
+        //sidePanel.add(new JComboBox<>(powerOptions), gbc);
+        sidePanel.add(powerBox, gbc);
+        
         gbc.gridx = 1;
         sidePanel.add(powerButton, gbc);
         gbc.gridx = 0;
@@ -108,7 +119,13 @@ public class View extends JFrame implements ActionListener {
         gbc.fill = GridBagConstraints.HORIZONTAL;
         gbc.gridx = 0;
         gbc.gridy++;
-        sidePanel.add(new JComboBox<>(shopOptions), gbc);
+        
+        
+        
+        JComboBox shopBox = new JComboBox(shopOptions);
+        //sidePanel.add(new JComboBox<>(shopOptions), gbc);
+        sidePanel.add(shopBox, gbc);
+        
         gbc.gridx = 1;
         sidePanel.add(shopButton, gbc);
         gbc.gridx = 0;
@@ -123,6 +140,32 @@ public class View extends JFrame implements ActionListener {
 
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setVisible(true);
+        
+        //Shop actionlistener
+       /* BUTTON FOR SHOP
+        * UNCOMMENT TO TEST
+        shopButton.addActionListener(new ActionListener()
+        {
+          public void actionPerformed(ActionEvent e)
+          {
+              //if user's wallet is less than cost. They cannot purchase
+        	  if(c.player.getWallet() < c.shop.getCost(shopBox.getSelectedIndex())) {
+        		    		  
+        		  //display error message
+        		  
+        	  }else {
+        		  
+        		  //purchase upgrade
+        		  c.shop.purchase(shopBox.getSelectedIndex());
+        		  
+        	  }
+        	  
+          }
+        });   */     
+        
+        
+        
+        
     }
 
     public void actionPerformed(ActionEvent evt){ repaint();}
