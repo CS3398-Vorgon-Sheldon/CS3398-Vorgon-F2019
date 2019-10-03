@@ -6,6 +6,7 @@ import java.awt.event.ActionListener;
 public class View extends JFrame implements ActionListener {
     private int workHours;
     private int money;
+    private int prestige;
 
     JLabel workLabel = new JLabel("Hours worked: " + String.valueOf(workHours));
     JLabel moneyLabel = new JLabel("Dollars: $" + String.valueOf(money));

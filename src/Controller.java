@@ -47,7 +47,7 @@ public class Controller implements MouseListener {
 
     // main
     public static void main(String[] args) throws Exception{
-        playMusic("Mario.wav");      
+        //playMusic("Mario.wav");      
         Controller game = new Controller();
     }
 
