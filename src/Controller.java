@@ -10,13 +10,15 @@ public class Controller implements MouseListener {
     Player player;
     Model model;
     View view;
+    Shop shop;
 
 
     Controller() throws IOException, Exception{
         model = new Model();
         player = new Player();
         view = new View(this);
-
+        shop = new Shop(player);
+        
         new Timer(10, view).start();
     }
 
@@ -26,7 +28,7 @@ public class Controller implements MouseListener {
     public void mousePressed(MouseEvent e){
 
         if(SwingUtilities.isLeftMouseButton(e)){
-            player.updateWorkHours(1);
+            player.updateWorkHours(player.getClickPower());
             view.workLabel.setText("Hours Worked: " + String.valueOf(player.getWorkHours()));
             player.updateLevel(player.getWorkHours());
             view.levelLabel.setText("Current Level: " + String.valueOf(player.getLevel()));
