@@ -26,8 +26,8 @@ public class Controller implements MouseListener {
     public void mousePressed(MouseEvent e){
 
         if(SwingUtilities.isLeftMouseButton(e)){
-            player.updateBalance(1);
-            view.label.setText("Balance: " + String.valueOf(player.getBalance()));
+            player.updateWorkHours(1);
+            view.workLabel.setText("Hours Worked: " + String.valueOf(player.getWorkHours()));
         } else if(SwingUtilities.isRightMouseButton(e)){
 
         }

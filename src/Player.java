@@ -1,27 +1,30 @@
 public class Player {
 
     // how much the player currently has
-    private int balance;
+    private int workHours;
+    private int money;
     // array of current upgrades
     //private Upgrades upgrades[];
     private boolean debug = true;
     private int clickPower;
 
     Player(){
-        balance = 0;
+        workHours = 0;
         clickPower = 1;
     }
 
-    public void updateBalance(int amount) {
-        balance += amount;
-        displayBalance();
+    public void updateWorkHours(int amount) {
+        workHours += amount;
+        displayWorkHours();
     }
 
-    public void displayBalance(){
-        System.out.println("Balance: " + balance);
+    public void displayWorkHours(){
+        System.out.println("Hours Worked: " + workHours);
     }
-    public int getBalance(){ return balance; }
+    public int getWorkHours(){ return workHours; }
     // this is called constantly, use to update balance
+    public int getMoney(){ return money; }
+
     public void update(){
         //if(debug)
             //System.out.println("Player Update called");

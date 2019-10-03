@@ -4,9 +4,12 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class View extends JFrame implements ActionListener {
-    private int balance;
-    JLabel label = new JLabel("Balance: " + String.valueOf(balance), SwingConstants.CENTER);
-    
+    private int workHours;
+    private int money;
+
+    JLabel workLabel = new JLabel("Hours Worked: " + String.valueOf(workHours), SwingConstants.CENTER);
+    JLabel moneyLabel = new JLabel("Dollars: $" + String.valueOf(money), SwingConstants.CENTER);
+
     JButton jobButton = new JButton("Do job");
     JButton powerButton = new JButton("Power up!");
     JButton shopButton = new JButton("Buy from shop");
@@ -30,17 +33,25 @@ public class View extends JFrame implements ActionListener {
         public void paintComponent(Graphics g) {
             revalidate();
             controller.update(g);
-            balance = controller.player.getBalance();
+            workHours = controller.player.getWorkHours();
         }
     }
 
     public View(Controller c)throws Exception{
-        int balance = c.player.getBalance();
+        int workHours = c.player.getWorkHours();
 
         setTitle("Vorgon Clicker!");
         setSize(750,750); // subject to change
         getContentPane().add(new MyPanel(c), BorderLayout.CENTER);
-        getContentPane().add(label, BorderLayout.PAGE_START);
+
+        JPanel topPanel = new JPanel();
+        topPanel.setBackground(Color.darkGray);
+        workLabel.setForeground(Color.white);
+        moneyLabel.setForeground(Color.white);
+        topPanel.add(workLabel);
+        topPanel.add(moneyLabel);
+
+        getContentPane().add(topPanel, BorderLayout.PAGE_START);
 
         // begin side menu
         GridBagLayout sideLayout = new GridBagLayout();
@@ -84,7 +95,7 @@ public class View extends JFrame implements ActionListener {
         gbc.gridwidth = 2;
         powerFlavorLabel.setForeground(Color.white);
         sidePanel.add(powerFlavorLabel, gbc);
-        
+
         gbc.gridwidth = 1;
         gbc.fill = GridBagConstraints.HORIZONTAL;
         gbc.gridx = 0;
@@ -98,7 +109,7 @@ public class View extends JFrame implements ActionListener {
         gbc.gridwidth = 2;
         shopFlavorLabel.setForeground(Color.white);
         sidePanel.add(shopFlavorLabel, gbc);
-        
+
         getContentPane().add(sidePanel, BorderLayout.EAST);
         // end side menu
 
