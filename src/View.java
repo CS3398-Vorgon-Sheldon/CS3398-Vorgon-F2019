@@ -8,10 +8,18 @@ public class View extends JFrame implements ActionListener {
     private int money;
     private int prestige;
     private int level;
+    private ImageIcon shopIcon = new ImageIcon(getClass().getResource("store.jpg"));    //gets image files
+    private ImageIcon jobIcon = new ImageIcon(getClass().getResource("jobs.jpg"));
+    private ImageIcon workDeskIcon = new ImageIcon(getClass().getResource("workdesk.jpg"));
+    private ImageIcon powerUpIcon = new ImageIcon(getClass().getResource("powerup.jpg"));
 
     JLabel workLabel = new JLabel("Hours worked: " + String.valueOf(workHours));
     JLabel moneyLabel = new JLabel("Dollars: $" + String.valueOf(money));
     JLabel levelLabel = new JLabel("Current level: " + String.valueOf(level));
+    JLabel shopLabel = new JLabel(shopIcon);                                //for shop Icon
+    JLabel jobLabel = new JLabel(jobIcon);                                  //for job Icon
+    JLabel workDeskLabel = new JLabel(workDeskIcon);                         //for workdek Icon
+    JLabel powerUpLabel = new JLabel(powerUpIcon);                        //for powerup Icon
 
     JButton jobButton = new JButton("Do job");
     JButton powerButton = new JButton("Power up!");
@@ -50,8 +58,9 @@ public class View extends JFrame implements ActionListener {
 
         setTitle("Vorgon Clicker!");
         setSize(750,750); // subject to change
+        getContentPane().add(workDeskLabel,BorderLayout.WEST);             //for showing desk image
         getContentPane().add(new MyPanel(c), BorderLayout.CENTER);
-
+        
 
         JPanel topPanel = new JPanel();
         topPanel.setBackground(Color.darkGray);
@@ -72,6 +81,7 @@ public class View extends JFrame implements ActionListener {
         gbc.weighty = 1.0;
         JPanel sidePanel = new JPanel(sideLayout);
         sidePanel.setBackground(Color.darkGray);
+        
 
         gbc.fill = GridBagConstraints.HORIZONTAL;
         gbc.gridx = 0;
@@ -96,6 +106,9 @@ public class View extends JFrame implements ActionListener {
         gbc.gridwidth = 2;
         jobFlavorLabel.setForeground(Color.white);
         sidePanel.add(jobFlavorLabel, gbc);
+        gbc.gridx = 1;
+        sidePanel.add(jobLabel, gbc);                          //shows job image
+        
 
         gbc.gridwidth = 1;
         gbc.fill = GridBagConstraints.HORIZONTAL;
@@ -106,6 +119,7 @@ public class View extends JFrame implements ActionListener {
         //sidePanel.add(new JComboBox<>(powerOptions), gbc);
         sidePanel.add(powerBox, gbc);
         
+        
         gbc.gridx = 1;
         sidePanel.add(powerButton, gbc);
         gbc.gridx = 0;
@@ -114,6 +128,8 @@ public class View extends JFrame implements ActionListener {
         gbc.gridwidth = 2;
         powerFlavorLabel.setForeground(Color.white);
         sidePanel.add(powerFlavorLabel, gbc);
+        gbc.gridx = 1;
+        sidePanel.add(powerUpLabel, gbc);                          //shows powerup image
 
         gbc.gridwidth = 1;
         gbc.fill = GridBagConstraints.HORIZONTAL;
@@ -134,6 +150,8 @@ public class View extends JFrame implements ActionListener {
         gbc.gridwidth = 2;
         shopFlavorLabel.setForeground(Color.white);
         sidePanel.add(shopFlavorLabel, gbc);
+        gbc.gridx = 1;
+        sidePanel.add(shopLabel, gbc);                          //shows shop image
 
         getContentPane().add(sidePanel, BorderLayout.EAST);
         // end side menu
