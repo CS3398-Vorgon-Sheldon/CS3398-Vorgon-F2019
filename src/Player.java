@@ -1,3 +1,12 @@
+
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.JLabel;
+import javax.swing.SwingConstants;
+import javax.swing.Timer;
+
+
 public class Player {
 
     // how much the player currently has
@@ -9,7 +18,8 @@ public class Player {
     //private Upgrades upgrades[];
     private boolean debug = true;
     private int clickPower;
-
+    Timer timer;
+    
     Player(){
         workHours = 0;
         money = 0;
@@ -96,11 +106,11 @@ public class Player {
 
         if(prestige == 0)
         {
-          clickPower = 1
+          clickPower = 1;
         }
         else
         {
-          clickPower = 1*prestige //
+          clickPower = 1*prestige; //
         }
 
 
@@ -114,7 +124,7 @@ public class Player {
     		
     		public void actionPerformed(ActionEvent e){
     			
-    			balance++;
+    			workHours++;
     			
     		}
     	});
