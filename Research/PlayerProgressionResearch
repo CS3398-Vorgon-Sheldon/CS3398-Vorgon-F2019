@@ -1,0 +1,12 @@
+Implementation level progression: 
+ -Player level needs to be able to increment the more they play the game. 
+ -The levels and progression needs to take into account that players will be upgrading over time.
+ -The rate at which the next level is reached needs to grow faster than player upgrades.
+ -Ideally the rate of experience needed for the next level needs to grow exponentially so that future
+  levels are still challenging. 
+ -Will need to take into acount the power ups available and shop items and their effects
+ -formula could change depending on what items/power up a player has
+ -Initially will just be a squared formula to calculate level experience needed
+ -Level can be capped or left to grow endlessly 
+ -Needs to be implemented in a way that is visual to the player within the HUD
+ -HUD implementation of the Level needs to update as soon as a player hits the new level benchmark
