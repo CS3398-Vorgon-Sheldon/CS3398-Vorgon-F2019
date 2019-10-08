@@ -68,4 +68,4 @@ The foundation of the game is in existence. One part that just needs to be merge
 
 * Nigel -
 
-* Sergio -
+* Sergio - Next step would for level progression to be used in utilites like items, shop, etc. and let player increase it.
