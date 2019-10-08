@@ -66,6 +66,6 @@ The foundation of the game is in existence. One part that just needs to be merge
 
 * Joey - Next step would be to further improve and add to the GUI and implement the leaderboard.
 
-* Nigel -
+* Nigel - Next step would be to implement a wider genre of sounds for the current and future buttons. I will also be implementing a method that will boost possible points earned for a limited amount of time. 
 
 * Sergio - Next step would for level progression to be used in utilites like items, shop, etc. and let player increase it.
