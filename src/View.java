@@ -160,14 +160,13 @@ public class View extends JFrame implements ActionListener {
         setVisible(true);
         
         //Shop actionlistener
-       /* BUTTON FOR SHOP
-        * UNCOMMENT TO TEST
+       // BUTTON FOR SHOP
         shopButton.addActionListener(new ActionListener()
         {
           public void actionPerformed(ActionEvent e)
           {
               //if user's wallet is less than cost. They cannot purchase
-        	  if(c.player.getWallet() < c.shop.getCost(shopBox.getSelectedIndex())) {
+        	  if(c.player.getMoney() < c.shop.getCost(shopBox.getSelectedIndex())) {
         		    		  
         		  //display error message
         		  
@@ -179,7 +178,7 @@ public class View extends JFrame implements ActionListener {
         	  }
         	  
           }
-        });   */     
+        });        
         
         
         
