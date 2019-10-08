@@ -49,7 +49,11 @@ Miguel
 * Time base objects that could reward or hurt the player; See Research/tbo_research.txt.
 
 Sergio
-* your stuff here
+* Level calculation. Fuction calculates players level and updates continuously as player clicks.
+ * See Research/PlayerProgressionResearch.txt
+* Implementation of visual representation of Level status into top panel of Game HUD.
+* Found royalty free image libraries to use for game visualization within the GUI.
+* Implemented Images for GUI by resizing and positioning within each appropriate panel of GUI. 
 
 ## Status
 The foundation of the game is in existence. One part that just needs to be merged. Next step is to build up on our foundation. With the existing features, add on to the number of options the player is given in terms of upgrades, and clients. Updating icons, sounds, and the GUI along the way.
