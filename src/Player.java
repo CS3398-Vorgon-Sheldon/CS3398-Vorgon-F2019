@@ -13,16 +13,16 @@ public class Player {
     private int workHours;
     private int money;
     private int prestige;
-    private int level;                                        //level is calculated by hours worked to unlock 
+    private int level;                                        //level is calculated by hours worked to unlock
     // array of current upgrades
     //private Upgrades upgrades[];
     private boolean debug = true;
     private int clickPower;
     Timer timer;
-    
+
     Player(){
         workHours = 0;
-        money = 0;
+        money = 200; //testing purposes Change this back when clients have been introduced
         clickPower = 1;
         level = 1;                                           //level will unlock the powerups you can buy in shop
     }
@@ -35,18 +35,18 @@ public class Player {
     public void displayWorkHours(){
         System.out.println("Hours Worked: " + workHours);
     }
-    
+
     //updates money
     public void updateMoney(int amount) {
-    	
+
         money += amount;
-        
+
     }
 
     public int getWorkHours(){ return workHours; }
     // this is called constantly, use to update balance
     public int getMoney(){ return money; }
-    
+
     public void updateLevel(int hrs) {                    //updates and calculates for next level
     	int xpNeeded = ((level * level) * 50);
         if (hrs == xpNeeded)
@@ -55,11 +55,11 @@ public class Player {
         }
         displayLevel();
     }
-    
+
     public void displayLevel(){
-        System.out.println("Current Level: " + level);      
+        System.out.println("Current Level: " + level);
     }
-    
+
     public int getLevel(){ return level; }
 
     /*
@@ -79,21 +79,21 @@ public class Player {
         prestige = counter;
 
     }
-    
+
     //sets clickPower
     public void setClickPower(int count) {
-    	
+
     	clickPower = count;
-    	
+
     }//end setClickPower
-    
+
     //returns clickPower
     public int getClickPower() {
-    	
+
     	return clickPower;
-    	
+
     }//end getClickPower
-    
+
     /*
     called after purchasing upgrades or after reseting. Determines the clicking
     power of the main clicker.
@@ -101,7 +101,7 @@ public class Player {
     Full formula w/ prestige adds 2^prestige. So 10 prestige should give 1024 multiplicative_bonus
     actually with that formula we don't even need the if statement b/c 2^0 = 1
     */
-    
+
     public void calcClickPower(){
 
         if(prestige == 0)
@@ -115,28 +115,28 @@ public class Player {
 
 
     }
-    
+
     //*******************************************
     //ADDED SET TIMER FOR AUTO CLICKER
     public void setTimer(boolean start, int speed) {
-    	
+
     	timer = new Timer(speed, new ActionListener() {
-    		
+
     		public void actionPerformed(ActionEvent e){
-    			
+
     			workHours++;
-    			
+
     		}
     	});
-    	
+
     	if (start == true) {
-    		
+
     		timer.start();
-    		
+
     	}
-    	
+
     }//end setTimer
-    
+
 
     public void update(){
         //if(debug)

@@ -26,15 +26,15 @@ List of features ready and TODOs for future development
 
 
 ## Student entries
-Hugo Sanchez
+Hugo
 * Initial implementation of core mechanic with Swing GUI (Click Mouse, increase counter, update screen). Commit seen 9/29/2019 Titled "Base Implementation".
     Served as a base to let the team spread out and add their sections.
 * Theme Integration from research; See Research/Theme Research.txt
 
-Nigel Bonnain
+Nigel
 * Application background music and button sound effects
 * Sound artifact is in the src folder. The artifact is used to implement the background music for the application. The artifact is also used to implement sound effects for several buttons.
-* My method is called first inside of main. 
+* My method is called first inside of main.
 
 Joey
 * Research for the game's UX; See Research/ux_research.txt. Information to be used to structure GUI and navigation.
@@ -52,5 +52,8 @@ Sergio
 * your stuff here
 
 ## Status
+The foundation of the game is in existence. One part that just needs to be merged. Next step is to build up on our foundation. With the existing features, add on to the number of options the player is given in terms of upgrades, and clients. Updating icons, sounds, and the GUI along the way.
 
 * Miguel - next step would be to implement the statistics and maybe get started on the in game achievements
+
+* Hugo - Next step would be to implement a reset button and add an "Opening Menu" to the GUI.
