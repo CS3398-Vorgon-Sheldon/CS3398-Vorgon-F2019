@@ -40,6 +40,7 @@ Nigel
 Joey
 * Research for the game's UX; See Research/ux_research.txt. Information to be used to structure GUI and navigation.
 * Create GUI - Created initial GUI based on our game features/modifiers such as jobs, power ups, and the shop.
+    * Code is located in the src/View.java file.
 * Research leaderboard implementation; See Research/leaderboard_research.txt. Information to be used to implement leaderboard based off of user statistics.
 
 Miguel
