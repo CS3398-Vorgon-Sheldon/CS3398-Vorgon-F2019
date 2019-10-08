@@ -59,11 +59,11 @@ Sergio
 ## Status
 The foundation of the game is in existence. One part that just needs to be merged. Next step is to build up on our foundation. With the existing features, add on to the number of options the player is given in terms of upgrades, and clients. Updating icons, sounds, and the GUI along the way.
 
-* Miguel - next step would be to implement the statistics and maybe get started on the in game achievements
+* Miguel - Next step would be to implement the statistics and maybe get started on the in game achievements.
 
 * Hugo - Next step would be to implement a reset button and add an "Opening Menu" to the GUI.
 
-* Joey -
+* Joey - Next step would be to further improve and add to the GUI and implement the leaderboard.
 
 * Nigel -
 
