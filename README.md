@@ -48,3 +48,7 @@ Miguel
 
 Sergio
 * your stuff here
+
+## Status
+
+* Miguel - next step would be to implement the statistics and maybe get started on the in game achievements
