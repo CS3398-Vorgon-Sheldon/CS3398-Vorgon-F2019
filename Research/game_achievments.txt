@@ -1,0 +1,58 @@
+Game Achievements
+- Achievements are titles that you can earn for completing certain achievements
+- While playing, if the user completes an achievement, it will display a message with the title
+
+Some things to think about if time allows
+- maybe have an icon that displays with each achievements.
+
+Potential Achievements:
+
+Work Hours Achievements:
+
+	Title			|	Description
+*******************************************************************
+Hello World!			|	Complete 1 work hour
+-------------------------------------------------------------------
+Have Stack Overflow bookmarked	|	Complete 100 work hours
+-------------------------------------------------------------------
+Google is my best friend	|	Complete 1000 work hours
+-------------------------------------------------------------------
+You comment all your functions?	|	Complete 100,000 work hours
+
+Clients Achievements:
+
+	Title			|	Description
+*******************************************************************
+Have to start somewhere		|	Have 1 client
+-------------------------------------------------------------------
+There you go!			|	Have 10 clients					
+-------------------------------------------------------------------
+Buisness is looking good	|	Have 50 clients
+-------------------------------------------------------------------
+				
+
+Jobs Achievements:
+
+	Title			|	Description
+*******************************************************************
+New Guy				|	Complete 1 job
+-------------------------------------------------------------------
+Intern				|	Complete 10 job					
+-------------------------------------------------------------------
+Intern				|	Complete 15 job
+-------------------------------------------------------------------
+
+Money Achievements:
+
+	Title			|	Description
+*******************************************************************
+Okay				|	Earn $25
+-------------------------------------------------------------------
+Nice				|	Earn $100				
+-------------------------------------------------------------------
+Great 				|	Earn $250
+-------------------------------------------------------------------
+
+- This is just a quick brainstorm
+- Could change the description depending on fast the user can get clients and money
+- Could add more achievments 

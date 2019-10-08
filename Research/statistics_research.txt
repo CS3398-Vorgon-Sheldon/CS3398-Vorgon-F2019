@@ -1,0 +1,27 @@
+Some statistics to keep track of
+
+- Work hours: 
+
+- Money in Wallet:
+- Money earned:
+- Money spent:
+
+- Jobs completed:
+- Jobs failed:
+
+- Clients earned:
+- Clients lost:
+
+- Work hours per tap:
+- Work hours per second:
+	-if using auto clicker
+
+- Upgrades owned: i/n
+	- i is how many the player owns
+	- n is the total amount of upgrades
+
+Achievements unlocked: i/n 
+	- i is the number of achievements completed 
+	- n is the total amount of achievements
+
+
