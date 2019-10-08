@@ -1,0 +1,37 @@
+Time base objects
+
+
+Brainstorm of time base objects
+
+- A feature that we could add is that the player can set his work hours or shift
+	- Some examples: 9 a.m - 5 p.m shift, or a 8 a.m - 2 p.m shift
+	- Would have a in game clock where a whole day is 12 minutes
+		- 30 seconds is an hour
+		
+- During their shift there will be a chance that a button will appear.
+	- 1/20 chance
+- Player can click the button and be rewarded or lose some things
+
+Rewards:
+	- Extra work hours in different amounts
+		- Could earn 5, 10, 15 work hours
+	- Gain some extra money
+		- message: "Found $5 by the vending machine"
+
+Potential loses:
+	- Lose some work hours
+		- message: "Binge some series"
+	- Lose some money
+		-message: "Went out to lunch"
+
+- Want to make the reward to lose ratio around a 70/30
+
+Some things to think about:
+
+- How often will this feature appear during the player's shift.
+- If the feature pops up, should there be a cooldown before it can pop up again
+	-maybe a 2 minute cooldown
+		- it would be 4 in game hours 
+
+
+    
