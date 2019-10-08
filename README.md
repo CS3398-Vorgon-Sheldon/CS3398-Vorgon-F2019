@@ -30,6 +30,7 @@ Hugo
 * Initial implementation of core mechanic with Swing GUI (Click Mouse, increase counter, update screen). Commit seen 9/29/2019 Titled "Base Implementation".
     Served as a base to let the team spread out and add their sections.
 * Theme Integration from research; See Research/Theme Research.txt
+* Added 2nd currency and named both existing ones accordingly adding functions for both and integrated them into the GUI.
 
 Nigel
 * Application background music and button sound effects
@@ -53,7 +54,7 @@ Sergio
  * See Research/PlayerProgressionResearch.txt
 * Implementation of visual representation of Level status into top panel of Game HUD.
 * Found royalty free image libraries to use for game visualization within the GUI.
-* Implemented Images for GUI by resizing and positioning within each appropriate panel of GUI. 
+* Implemented Images for GUI by resizing and positioning within each appropriate panel of GUI.
 
 ## Status
 The foundation of the game is in existence. One part that just needs to be merged. Next step is to build up on our foundation. With the existing features, add on to the number of options the player is given in terms of upgrades, and clients. Updating icons, sounds, and the GUI along the way.
@@ -61,3 +62,9 @@ The foundation of the game is in existence. One part that just needs to be merge
 * Miguel - next step would be to implement the statistics and maybe get started on the in game achievements
 
 * Hugo - Next step would be to implement a reset button and add an "Opening Menu" to the GUI.
+
+* Joey -
+
+* Nigel -
+
+* Sergio -
