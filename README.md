@@ -22,4 +22,5 @@ List of features ready and TODOs for future development
 * Click counter - it adds up the user's click
 * Theme - Gives the game a visual aspect for the user
 * Various clicking methods - It gives the user different ways to interact with the game
+*Application background music and button sound effects - Nigel Bonnain.
 
