@@ -49,7 +49,11 @@ Miguel
 * Time base objects that could reward or hurt the player; See Research/tbo_research.txt.
 
 Sergio
-* your stuff here
+* Level calculation. Fuction calculates players level and updates continuously as player clicks.
+ * See Research/PlayerProgressionResearch.txt
+* Implementation of visual representation of Level status into top panel of Game HUD.
+* Found royalty free image libraries to use for game visualization within the GUI.
+* Implemented Images for GUI by resizing and positioning within each appropriate panel of GUI. 
 
 ## Status
 
