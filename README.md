@@ -37,7 +37,9 @@ Nigel Bonnain
 * My method is called first inside of main. 
 
 Joey
-* your stuff here
+* Research for the game's UX; See Research/ux_research.txt. Information to be used to structure GUI and navigation.
+* Create GUI - Created initial GUI based on our game features/modifiers such as jobs, power ups, and the shop.
+* Research leaderboard implementation; See Research/leaderboard_research.txt. Information to be used to implement leaderboard based off of user statistics.
 
 Miguel
 * Shop implementation. Player can use the shop to buy upgrades with the money they have earned in game.
