@@ -38,7 +38,13 @@ Nigel Bonnain
 
 Joey
 * your stuff here
+
 Miguel
-* your stuff here
+* Shop implementation. Player can use the shop to buy upgrades with the money they have earned in game.
+  * Code is found in the src folder as shop.java.
+* In game achievements that we could add; See Research/game_achievements.txt.
+* Statistics that we can keep track of and provide; See Research/statistics_research.txt.
+* Time base objects that could reward or hurt the player; See Research/tbo_research.txt.
+
 Sergio
 * your stuff here
