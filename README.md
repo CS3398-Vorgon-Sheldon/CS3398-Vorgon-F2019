@@ -34,6 +34,7 @@ Hugo Sanchez
 Nigel Bonnain
 * Application background music and button sound effects
 * Sound artifact is in the src folder. The artifact is used to implement the background music for the application. The artifact is also used to implement sound effects for several buttons.
+
 *My method is called first inside of main. 
 
 Joey
