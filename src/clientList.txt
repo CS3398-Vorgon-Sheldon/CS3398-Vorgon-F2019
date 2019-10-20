@@ -1,0 +1,20 @@
+Classmate's homework
+5
+3
+Jack forgot to do his homework and the due date is upcoming
+Dr.Lehr's Sprint
+20
+10
+Dr.Lehr assigned another sprint and Jerry needs someone to help him with his part.
+CS Final Project
+400
+100
+Josh is lost in computer architecture, finish his final project so he can pass the course.
+Design Operating System
+10000
+1000
+Dr. Palacios assigned a very vague project one. Work like hell to finish it.
+Set up Company's Network
+100000
+5000
+Enjoy the rest of your life doing CS Stuff
