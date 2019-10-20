@@ -27,25 +27,31 @@ public class Player {
         level = 1;                                           //level will unlock the powerups you can buy in shop
     }
 
+//updates workHours
     public void updateWorkHours(int amount) {
         workHours += amount;
         displayWorkHours();
     }
 
+//helps us debugg by being able to look at command console and see that our inputs are going through
     public void displayWorkHours(){
         System.out.println("Hours Worked: " + workHours);
     }
 
-    //updates money
+//updates money
     public void updateMoney(int amount) {
-
         money += amount;
-
+        displayMoney();
     }
 
-    public int getWorkHours(){ return workHours; }
-    // this is called constantly, use to update balance
-    public int getMoney(){ return money; }
+//helps us debugg by being able to look at command console and see that our inputs are going through
+    public void displayMoney(){
+        System.out.println("Money: " + money);
+    }
+
+
+
+
 
     public void updateLevel(int hrs) {                    //updates and calculates for next level
     	int xpNeeded = ((level * level) * 50);
@@ -60,7 +66,7 @@ public class Player {
         System.out.println("Current Level: " + level);
     }
 
-    public int getLevel(){ return level; }
+
 
     /*
     Only called during a reset or "ascension". Adds prestige currency
@@ -101,7 +107,6 @@ public class Player {
     Full formula w/ prestige adds 2^prestige. So 10 prestige should give 1024 multiplicative_bonus
     actually with that formula we don't even need the if statement b/c 2^0 = 1
     */
-
     public void calcClickPower(){
 
         if(prestige == 0)
@@ -112,30 +117,30 @@ public class Player {
         {
           clickPower = 1*prestige; //
         }
-
-
     }
 
     //*******************************************
     //ADDED SET TIMER FOR AUTO CLICKER
     public void setTimer(boolean start, int speed) {
+      	timer = new Timer(speed, new ActionListener() {
+          	public void actionPerformed(ActionEvent e){
+          		  workHours++;
+          	}
+      	});
 
-    	timer = new Timer(speed, new ActionListener() {
-
-    		public void actionPerformed(ActionEvent e){
-
-    			workHours++;
-
-    		}
-    	});
-
-    	if (start == true) {
-
-    		timer.start();
-
-    	}
-
+    	  if (start == true) {
+    		    timer.start();
+    	  }
     }//end setTimer
+
+//getters
+    public int getWorkHours(){ return workHours; }
+    public int getMoney(){ return money; }
+    public int getLevel(){ return level; }
+    public int getClickPower() { return clickPower; }
+
+//setters
+    public void setClickPower(int count) {clickPower = count;}
 
 
     public void update(){
