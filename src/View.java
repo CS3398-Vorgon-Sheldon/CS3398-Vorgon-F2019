@@ -1,4 +1,6 @@
 import javax.swing.*;
+import javax.swing.border.LineBorder;
+
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -9,9 +11,11 @@ public class View extends JFrame implements ActionListener {
     private int prestige;
     private int level;
     private ImageIcon shopIcon = new ImageIcon(getClass().getResource("store.jpg"));  //gets image files
+    //private ImageIcon shopIcon = new ImageIcon(getClass().getResource("store.png"));  //this img is smaller
     private ImageIcon jobIcon = new ImageIcon(getClass().getResource("jobs.jpg"));
     private ImageIcon workDeskIcon = new ImageIcon(getClass().getResource("workdesk.jpg"));
     private ImageIcon powerUpIcon = new ImageIcon(getClass().getResource("powerup.jpg"));
+    private ImageIcon kbImage = new ImageIcon(getClass().getClassLoader().getResource("keyboard.png"));
 
     JLabel workLabel = new JLabel("Hours worked: " + String.valueOf(workHours));
     JLabel moneyLabel = new JLabel("Dollars: $" + String.valueOf(money));
@@ -21,8 +25,8 @@ public class View extends JFrame implements ActionListener {
     JLabel workDeskLabel = new JLabel(workDeskIcon);  //for workdek Icon
     JLabel powerUpLabel = new JLabel(powerUpIcon);  //for powerup Icon
 
-    JButton jobButton = new JButton("Do job");
-    JButton powerButton = new JButton("Power up!");
+    //JButton jobButton = new JButton("Do job");
+    //JButton powerButton = new JButton("Power up!");
     //JButton shopButton = new JButton("Buy from shop");
 
     //JLabel jobFlavorLabel = new JLabel("Job description flavor text...");
@@ -38,7 +42,7 @@ public class View extends JFrame implements ActionListener {
     final int WINDOW_HEIGHT = 600; // Window height in pixels
     
 	JLabel counterLabel;
-	JButton jobsButton, shopButton, statsButton;
+	JButton jobsButton, powerUpButton, shopButton, statsButton;
 
     /*
     private class MyPanel extends JPanel {
@@ -182,13 +186,11 @@ public class View extends JFrame implements ActionListener {
         kbPanel.setBackground(Color.white);
         add(kbPanel, BorderLayout.CENTER);
 
-        ImageIcon kb = new ImageIcon(getClass().getClassLoader().getResource("keyboard.png"));
-
         JButton kbButton = new JButton();
         kbButton.setBackground(Color.white);
         kbButton.setFocusPainted(false);
         kbButton.setBorder(null);
-        kbButton.setIcon(kb);
+        kbButton.setIcon(kbImage);
 
         // Update work hours when clicked
         kbButton.addActionListener(new ActionListener()
@@ -216,44 +218,94 @@ public class View extends JFrame implements ActionListener {
         //Buttons at the bottom
         JPanel bottomPanel = new JPanel();
         bottomPanel.setLayout(new FlowLayout(FlowLayout.CENTER));
-
-        //Button Images
-        ImageIcon storeImage = new ImageIcon(getClass().getClassLoader().getResource("store.jpg"));
-        //ImageIcon storeImage = new ImageIcon(getClass().getClassLoader().getResource("store.png")); //this img is smaller
         
-        jobsButton = new JButton("Jobs");
-        shopButton = new JButton("");
+        jobsButton = new JButton();
+        powerUpButton = new JButton();
+        shopButton = new JButton();
         statsButton = new JButton("Stats");
 
-        shopButton.setBorder(null);
-        shopButton.setIcon(storeImage);
+        jobsButton.setIcon(jobIcon);
+        jobsButton.setBackground(Color.white);
+        jobsButton.setBorder(new LineBorder(Color.DARK_GRAY));
+        jobsButton.setToolTipText("Jobs");
+
+        powerUpButton.setIcon(powerUpIcon);
+        powerUpButton.setBackground(Color.white);
+        powerUpButton.setBorder(new LineBorder(Color.DARK_GRAY));
+        powerUpButton.setToolTipText("Power Ups");
+
+        shopButton.setIcon(shopIcon);
+        shopButton.setBackground(Color.white);
+        shopButton.setBorder(new LineBorder(Color.DARK_GRAY));
+        shopButton.setToolTipText("Shop");
+
+        //statsButton.setIcon(statsIcon); //need image
+        statsButton.setBackground(Color.white);
+        statsButton.setBorder(new LineBorder(Color.DARK_GRAY));
+        statsButton.setToolTipText("Stats");
+        statsButton.setPreferredSize(new Dimension(shopIcon.getIconWidth(), shopIcon.getIconHeight()));
+
         bottomPanel.add(jobsButton);
+        bottomPanel.add(powerUpButton);
         bottomPanel.add(shopButton);
         bottomPanel.add(statsButton);
 
         add(bottomPanel, BorderLayout.SOUTH);
 
-        //Shop actionlistener
-       // BUTTON FOR SHOP
+        // Jobs button ActionListener
+        jobsButton.addActionListener(new ActionListener()
+        {
+          public void actionPerformed(ActionEvent e)
+          {
+            JOptionPane.showMessageDialog(null, "Jobs button actionPerformed.");
+            // Add code to open jobs page
+          }
+        });
+
+        // Power Up button ActionListener
+        powerUpButton.addActionListener(new ActionListener()
+        {
+          public void actionPerformed(ActionEvent e)
+          {
+            JOptionPane.showMessageDialog(null, "Power Up button actionPerformed.");
+            // Add code to open power ups page
+          }
+        });
+
+        // Shop button ActionListener
         shopButton.addActionListener(new ActionListener()
         {
           public void actionPerformed(ActionEvent e)
           {
-              /*
-              //if user's wallet is less than cost. They cannot purchase
-        	  if(c.player.getMoney() < c.shop.getCost(shopBox.getSelectedIndex())) {
-        		    		  
-        		  //display error message
-        		  
-        	  } else {
-        		  
-        		  //purchase upgrade
-        		  c.shop.purchase(shopBox.getSelectedIndex());
-        		  
-        	  }
-        	  */
+            JOptionPane.showMessageDialog(null, "Shop button actionPerformed.");
+            /*
+            //if user's wallet is less than cost. They cannot purchase
+        	if(c.player.getMoney() < c.shop.getCost(shopBox.getSelectedIndex())) {
+        	   		  
+        	 //display error message
+        	 
+        	} else {
+        	 
+        	 //purchase upgrade
+        	 c.shop.purchase(shopBox.getSelectedIndex());
+        	 
+        	}
+        	*/
           }
         });
+
+        // Stats button ActionListener
+        statsButton.addActionListener(new ActionListener()
+        {
+          public void actionPerformed(ActionEvent e)
+          {
+            JOptionPane.showMessageDialog(null, "Stats button actionPerformed.");
+            // Add code to open stats page
+          }
+        });
+
+        // Start the application in the center of the screen
+        setLocationRelativeTo(null);
 
         // Display the window.
         setVisible(true);
