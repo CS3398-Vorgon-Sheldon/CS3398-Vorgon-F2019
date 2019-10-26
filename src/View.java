@@ -1,6 +1,8 @@
 import javax.swing.*;
 import javax.swing.border.LineBorder;
 
+import javafx.scene.control.Tooltip;
+
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -11,7 +13,7 @@ public class View extends JFrame implements ActionListener {
     private int prestige;
     private int level;
     private ImageIcon shopIcon = new ImageIcon(getClass().getResource("store.jpg"));  //gets image files
-    //private ImageIcon shopIcon = new ImageIcon(getClass().getResource("store.png"));  //this img is smaller
+    //private ImageIcon shopIcon = new ImageIcon(getClass().getResource("store.png"));  //this image is smaller
     private ImageIcon jobIcon = new ImageIcon(getClass().getResource("jobs.jpg"));
     private ImageIcon workDeskIcon = new ImageIcon(getClass().getResource("workdesk.jpg"));
     private ImageIcon powerUpIcon = new ImageIcon(getClass().getResource("powerup.jpg"));
@@ -228,22 +230,27 @@ public class View extends JFrame implements ActionListener {
         jobsButton.setBackground(Color.white);
         jobsButton.setBorder(new LineBorder(Color.DARK_GRAY));
         jobsButton.setToolTipText("Jobs");
+		jobsButton.setFocusPainted(false);
 
         powerUpButton.setIcon(powerUpIcon);
         powerUpButton.setBackground(Color.white);
         powerUpButton.setBorder(new LineBorder(Color.DARK_GRAY));
         powerUpButton.setToolTipText("Power Ups");
+		powerUpButton.setFocusPainted(false);
 
         shopButton.setIcon(shopIcon);
         shopButton.setBackground(Color.white);
         shopButton.setBorder(new LineBorder(Color.DARK_GRAY));
         shopButton.setToolTipText("Shop");
+		shopButton.setFocusPainted(false);
 
         //statsButton.setIcon(statsIcon); //need image
         statsButton.setBackground(Color.white);
         statsButton.setBorder(new LineBorder(Color.DARK_GRAY));
         statsButton.setToolTipText("Stats");
         statsButton.setPreferredSize(new Dimension(shopIcon.getIconWidth(), shopIcon.getIconHeight()));
+		statsButton.setFont(new Font("Arial", Font.PLAIN, 20));
+		statsButton.setFocusPainted(false);
 
         bottomPanel.add(jobsButton);
         bottomPanel.add(powerUpButton);
@@ -277,7 +284,8 @@ public class View extends JFrame implements ActionListener {
         {
           public void actionPerformed(ActionEvent e)
           {
-            JOptionPane.showMessageDialog(null, "Shop button actionPerformed.");
+            c.shop.shopMenu();
+            
             /*
             //if user's wallet is less than cost. They cannot purchase
         	if(c.player.getMoney() < c.shop.getCost(shopBox.getSelectedIndex())) {
@@ -312,5 +320,5 @@ public class View extends JFrame implements ActionListener {
         
     }
 
-    //public void actionPerformed(ActionEvent e) { repaint(); }
+    public void actionPerformed(ActionEvent e) { repaint(); }
 }
