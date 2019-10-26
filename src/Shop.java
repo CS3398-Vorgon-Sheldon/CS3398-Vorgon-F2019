@@ -12,9 +12,7 @@ public class Shop {
 	private int cost[] = new int[]{20, 50, 100};
 	
 	final int WINDOW_WIDTH = 800; // Window width in pixels
-	final int WINDOW_HEIGHT = 600;
-	 
-	Graphics g;
+	final int WINDOW_HEIGHT = 600; // Window height in pixels
 
     
     public Shop(Player player){
@@ -72,10 +70,10 @@ public class Shop {
 		shopFrame.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
 		shopFrame.getContentPane().setBackground(Color.white);
 		
-		//Shop Options
+		// Shop Options
 		 
 		
-		//Buttons at the bottom
+		// Buttons at the bottom
 		JPanel bottomPanel = new JPanel();
 		bottomPanel.setLayout(new FlowLayout(FlowLayout.CENTER));
 		 
@@ -86,7 +84,7 @@ public class Shop {
 		exitButton.setFont(new Font("Arial", Font.PLAIN, 20));
 		exitButton.setFocusPainted(false);
 		 
-		//Exit back to main game
+		// Exit back to main game
 		exitButton.addActionListener(new ActionListener()
 	    {
 	      public void actionPerformed(ActionEvent e)

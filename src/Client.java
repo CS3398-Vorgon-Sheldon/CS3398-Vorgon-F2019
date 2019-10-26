@@ -1,3 +1,10 @@
+import javax.swing.*;
+import javax.swing.border.LineBorder;
+
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
 public class Client {
 
     // Name of the client or job that will be done.
@@ -12,6 +19,9 @@ public class Client {
     private int timesDone;
     // intended for level implementation
     private int level;
+
+    final int WINDOW_WIDTH = 800; // Window width in pixels
+	final int WINDOW_HEIGHT = 600; // Window height in pixels
 
     //default contructor. not planned to be called
     Client(){
@@ -111,8 +121,48 @@ public class Client {
     public void setPayment(int num){this.payment = num;}
     public void setHourPay(int num){this.hourPay = num;}
     public void setFlavorText(String text){this.flavorText = text;}
-
-
-
+    
+    public void clientMenu() {
+		
+		JFrame clientFrame = new JFrame();
+		clientFrame.setTitle("Clients");
+		clientFrame.setSize(WINDOW_WIDTH, WINDOW_HEIGHT);
+		clientFrame.setLayout(new BorderLayout());
+		
+		clientFrame.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
+		clientFrame.getContentPane().setBackground(Color.white);
+		
+		// Clients Options
+		 
+		
+		// Buttons at the bottom
+		JPanel bottomPanel = new JPanel();
+		bottomPanel.setLayout(new FlowLayout(FlowLayout.CENTER));
+		 
+		JButton exitButton = new JButton("Exit");
+        exitButton.setBackground(Color.white);
+		exitButton.setBorder(new LineBorder(Color.DARK_GRAY));
+		exitButton.setPreferredSize(new Dimension(60, 40));
+		exitButton.setFont(new Font("Arial", Font.PLAIN, 20));
+		exitButton.setFocusPainted(false);
+		 
+		// Exit back to main game
+		exitButton.addActionListener(new ActionListener()
+	    {
+	      public void actionPerformed(ActionEvent e)
+	      {
+	       clientFrame.setVisible(false);
+	      }
+	    }); 	 
+		 
+		bottomPanel.add(exitButton);
+		 
+		clientFrame.add(bottomPanel, BorderLayout.SOUTH);
+		
+		clientFrame.setLocationRelativeTo(null);
+		
+		clientFrame.setVisible(true);
+		
+	}
 
 }

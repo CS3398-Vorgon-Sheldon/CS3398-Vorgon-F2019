@@ -13,6 +13,9 @@ public class Controller implements MouseListener {
     Model model;
     View view;
     Shop shop;
+    PowerUp powerUp;
+    Stats stats;
+    Client client;
 
 
     Controller() throws IOException, Exception{
@@ -20,6 +23,9 @@ public class Controller implements MouseListener {
         player = new Player();
         view = new View(this);
         shop = new Shop(player);
+        powerUp = new PowerUp(player);
+        stats = new Stats(player);
+        client = new Client();
         
         new Timer(10, view).start();
     }

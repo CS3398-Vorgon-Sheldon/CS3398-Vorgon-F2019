@@ -38,8 +38,7 @@ public class View extends JFrame implements ActionListener {
     //String jobOptions[] = { "Job 1", "Job 2", "Job 3" };
     //String powerOptions[] = { "Power up 1", "Power up 2", "Power up 3" };
     //String shopOptions[] = { "Plus 1: $20", "Auto Clicks: $50", "Employee Upgrade: $100" };
-                            
-    // new variables below
+    
     final int WINDOW_WIDTH = 800; // Window width in pixels
     final int WINDOW_HEIGHT = 600; // Window height in pixels
     
@@ -229,7 +228,7 @@ public class View extends JFrame implements ActionListener {
         jobsButton.setIcon(jobIcon);
         jobsButton.setBackground(Color.white);
         jobsButton.setBorder(new LineBorder(Color.DARK_GRAY));
-        jobsButton.setToolTipText("Jobs");
+        jobsButton.setToolTipText("Clients");
 		jobsButton.setFocusPainted(false);
 
         powerUpButton.setIcon(powerUpIcon);
@@ -247,7 +246,7 @@ public class View extends JFrame implements ActionListener {
         //statsButton.setIcon(statsIcon); //need image
         statsButton.setBackground(Color.white);
         statsButton.setBorder(new LineBorder(Color.DARK_GRAY));
-        statsButton.setToolTipText("Stats");
+        statsButton.setToolTipText("Statistics");
         statsButton.setPreferredSize(new Dimension(shopIcon.getIconWidth(), shopIcon.getIconHeight()));
 		statsButton.setFont(new Font("Arial", Font.PLAIN, 20));
 		statsButton.setFocusPainted(false);
@@ -264,7 +263,7 @@ public class View extends JFrame implements ActionListener {
         {
           public void actionPerformed(ActionEvent e)
           {
-            JOptionPane.showMessageDialog(null, "Jobs button actionPerformed.");
+            c.client.clientMenu();
             // Add code to open jobs page
           }
         });
@@ -274,7 +273,7 @@ public class View extends JFrame implements ActionListener {
         {
           public void actionPerformed(ActionEvent e)
           {
-            JOptionPane.showMessageDialog(null, "Power Up button actionPerformed.");
+            c.powerUp.powerUpMenu();
             // Add code to open power ups page
           }
         });
@@ -285,7 +284,7 @@ public class View extends JFrame implements ActionListener {
           public void actionPerformed(ActionEvent e)
           {
             c.shop.shopMenu();
-            
+
             /*
             //if user's wallet is less than cost. They cannot purchase
         	if(c.player.getMoney() < c.shop.getCost(shopBox.getSelectedIndex())) {
@@ -307,7 +306,7 @@ public class View extends JFrame implements ActionListener {
         {
           public void actionPerformed(ActionEvent e)
           {
-            JOptionPane.showMessageDialog(null, "Stats button actionPerformed.");
+            c.stats.statsMenu();
             // Add code to open stats page
           }
         });
