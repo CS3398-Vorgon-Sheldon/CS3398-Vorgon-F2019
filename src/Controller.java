@@ -6,7 +6,7 @@ import java.io.IOException;
 import javax.swing.Timer;
 import javax.swing.SwingUtilities;
 
-import static com.game.Sounds.playSound; //Need this to use the sound functions. 
+import static com.game.Sounds.playSound; //Need this to use the sound functions.
 
 public class Controller implements MouseListener {
     Player player;
