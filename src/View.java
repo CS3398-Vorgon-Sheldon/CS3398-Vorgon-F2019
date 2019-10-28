@@ -17,6 +17,7 @@ public class View extends JFrame implements ActionListener {
     private ImageIcon jobIcon = new ImageIcon(getClass().getResource("jobs.jpg"));
     private ImageIcon workDeskIcon = new ImageIcon(getClass().getResource("workdesk.jpg"));
     private ImageIcon powerUpIcon = new ImageIcon(getClass().getResource("powerup.jpg"));
+    private ImageIcon statsIcon = new ImageIcon(getClass().getResource("stats.png"));
     private ImageIcon kbImage = new ImageIcon(getClass().getClassLoader().getResource("keyboard.png"));
 
     JLabel workLabel = new JLabel("Hours worked: " + String.valueOf(workHours));
@@ -243,7 +244,7 @@ public class View extends JFrame implements ActionListener {
         shopButton.setToolTipText("Shop");
 		shopButton.setFocusPainted(false);
 
-        //statsButton.setIcon(statsIcon); //need image
+        statsButton.setIcon(statsIcon); //need image
         statsButton.setBackground(Color.white);
         statsButton.setBorder(new LineBorder(Color.DARK_GRAY));
         statsButton.setToolTipText("Statistics");
