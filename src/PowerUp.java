@@ -48,7 +48,7 @@ public class PowerUp {
 	    {
 	      public void actionPerformed(ActionEvent e)
 	      {
-	       powerUpFrame.setVisible(false);
+			  powerUpFrame.setVisible(false);
 	      }
 	    }); 	 
 		 

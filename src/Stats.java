@@ -79,7 +79,7 @@ public class Stats {
 	    {
 	      public void actionPerformed(ActionEvent e)
 	      {
-	       statsFrame.setVisible(false);
+			  statsFrame.setVisible(false);
 	      }
 	    }); 	 
 		 

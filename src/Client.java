@@ -151,7 +151,7 @@ public class Client {
 	    {
 	      public void actionPerformed(ActionEvent e)
 	      {
-	       clientFrame.setVisible(false);
+              clientFrame.setVisible(false);
 	      }
 	    }); 	 
 		 
