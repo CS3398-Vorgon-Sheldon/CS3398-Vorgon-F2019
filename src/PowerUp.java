@@ -69,21 +69,6 @@ public class PowerUp {
 		StyleConstants.setAlignment(center, StyleConstants.ALIGN_CENTER);
 		doc.setParagraphAttributes(0, doc.getLength(), center, false);
 
-		optionList.addListSelectionListener(new ListSelectionListener()
-		{
-		  public void valueChanged(ListSelectionEvent e)
-		  {
-			if (e.getValueIsAdjusting() == false)
-			{
-				flavorTextPane.setText("\n" + optionFlavorTexts[optionList.getSelectedIndex()]);
-			}
-			else
-			{
-			  //System.out.println("The value is adjusting.");
-			}
-		  }
-		});
-
 		gbc.fill = GridBagConstraints.HORIZONTAL;
 		leftPanel.add(optionList, gbc);
 		leftPanel.add(Box.createRigidArea(new Dimension(50, 15)), gbc);
@@ -94,6 +79,31 @@ public class PowerUp {
         powerUpBox.setBackground(Color.white);
 		powerUpBox.setBorder(new LineBorder(Color.DARK_GRAY));
 		powerUpBox.setFont(new Font("Arial", Font.PLAIN, 20));
+
+		powerUpBox.addActionListener(new ActionListener()
+		{
+			public void actionPerformed(ActionEvent e)
+			{
+				flavorTextPane.setText("\n" + optionFlavorTexts[powerUpBox.getSelectedIndex()]);
+				optionList.setSelectedIndex(powerUpBox.getSelectedIndex());
+			}
+		});
+
+		optionList.addListSelectionListener(new ListSelectionListener()
+		{
+			public void valueChanged(ListSelectionEvent e)
+			{
+				if (e.getValueIsAdjusting() == false)
+				{
+					flavorTextPane.setText("\n" + optionFlavorTexts[optionList.getSelectedIndex()]);
+					powerUpBox.setSelectedIndex(optionList.getSelectedIndex());
+				}
+				else
+				{
+					//System.out.println("The value is adjusting.");
+				}
+			}
+		});
 
 		JButton activateButton = new JButton("Activate");
         activateButton.setBackground(Color.ORANGE);

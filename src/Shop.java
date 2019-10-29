@@ -113,21 +113,6 @@ public class Shop {
 			StyleConstants.setAlignment(center, StyleConstants.ALIGN_CENTER);
 			doc.setParagraphAttributes(0, doc.getLength(), center, false);
 
-			optionList.addListSelectionListener(new ListSelectionListener()
-			{
-			public void valueChanged(ListSelectionEvent e)
-			{
-				if (e.getValueIsAdjusting() == false)
-				{
-					flavorTextPane.setText("\n" + optionFlavorTexts[optionList.getSelectedIndex()]);
-				}
-				else
-				{
-				//System.out.println("The value is adjusting.");
-				}
-			}
-			});
-
 			gbc.fill = GridBagConstraints.HORIZONTAL;
 			leftPanel.add(optionList, gbc);
 			leftPanel.add(Box.createRigidArea(new Dimension(50, 15)), gbc);
@@ -138,6 +123,31 @@ public class Shop {
 			shopBox.setBackground(Color.white);
 			shopBox.setBorder(new LineBorder(Color.DARK_GRAY));
 			shopBox.setFont(new Font("Arial", Font.PLAIN, 20));
+
+			shopBox.addActionListener(new ActionListener()
+			{
+				public void actionPerformed(ActionEvent e)
+				{
+					flavorTextPane.setText("\n" + optionFlavorTexts[shopBox.getSelectedIndex()]);
+					optionList.setSelectedIndex(shopBox.getSelectedIndex());
+				}
+			});
+
+			optionList.addListSelectionListener(new ListSelectionListener()
+			{
+				public void valueChanged(ListSelectionEvent e)
+				{
+					if (e.getValueIsAdjusting() == false)
+					{
+						flavorTextPane.setText("\n" + optionFlavorTexts[optionList.getSelectedIndex()]);
+						shopBox.setSelectedIndex(optionList.getSelectedIndex());
+					}
+					else
+					{
+						//System.out.println("The value is adjusting.");
+					}
+				}
+			});
 
 			JButton buyButton = new JButton("Buy");
 			buyButton.setBackground(new Color(133, 187, 101)); //green

@@ -126,21 +126,6 @@ public class ClientList {
 		StyleConstants.setAlignment(center, StyleConstants.ALIGN_CENTER);
 		doc.setParagraphAttributes(0, doc.getLength(), center, false);
 
-		optionList.addListSelectionListener(new ListSelectionListener()
-		{
-		  public void valueChanged(ListSelectionEvent e)
-		  {
-			if (e.getValueIsAdjusting() == false)
-			{
-				flavorTextPane.setText("\n" + optionFlavorTexts[optionList.getSelectedIndex()]);
-			}
-			else
-			{
-			  //System.out.println("The value is adjusting.");
-			}
-		  }
-		});
-
 		gbc.fill = GridBagConstraints.HORIZONTAL;
 		leftPanel.add(optionList, gbc);
 		leftPanel.add(Box.createRigidArea(new Dimension(50, 15)), gbc);
@@ -151,6 +136,31 @@ public class ClientList {
         clientBox.setBackground(Color.white);
 		clientBox.setBorder(new LineBorder(Color.DARK_GRAY));
 		clientBox.setFont(new Font("Arial", Font.PLAIN, 20));
+
+		clientBox.addActionListener(new ActionListener()
+		{
+			public void actionPerformed(ActionEvent e)
+			{
+				flavorTextPane.setText("\n" + optionFlavorTexts[clientBox.getSelectedIndex()]);
+				optionList.setSelectedIndex(clientBox.getSelectedIndex());
+			}
+		});
+
+		optionList.addListSelectionListener(new ListSelectionListener()
+		{
+            public void valueChanged(ListSelectionEvent e)
+            {
+                if (e.getValueIsAdjusting() == false)
+                {
+                    flavorTextPane.setText("\n" + optionFlavorTexts[optionList.getSelectedIndex()]);
+					clientBox.setSelectedIndex(optionList.getSelectedIndex());
+                }
+                else
+                {
+                    //System.out.println("The value is adjusting.");
+                }
+            }
+		});
 
 		JButton hireButton = new JButton("Hire");
         hireButton.setBackground(Color.BLUE);
