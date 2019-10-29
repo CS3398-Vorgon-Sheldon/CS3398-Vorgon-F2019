@@ -1,4 +1,6 @@
 import javax.swing.*;
+import javax.swing.border.Border;
+import javax.swing.border.EtchedBorder;
 import javax.swing.border.LineBorder;
 
 import java.awt.*;
@@ -57,7 +59,7 @@ public class Stats {
 		
 		Font tabFont = new Font("Arial", Font.BOLD, 25);
 		Font textFont = new Font("Arial", Font.BOLD, 18);
-		//Border raisedetched = BorderFactory.createEtchedBorder(EtchedBorder.RAISED); 
+		Border raisedetched = BorderFactory.createEtchedBorder(EtchedBorder.RAISED); 
 		
 	//~~~Tabs and respective text Panels~~~
 		
@@ -104,14 +106,31 @@ public class Stats {
 		achievementsTextPanel.setLayout(new BoxLayout(achievementsTextPanel, BoxLayout.PAGE_AXIS));
 		achievementsTextPanel.setBackground(Color.WHITE);
 		
-		JLabel achievementsTextLabel = new JLabel("~Achievement text~");
-		achievementsTextLabel.setFont(textFont);
+		JLabel achievementsTextLabel = new JLabel("Achievement 1");
+		achievementsTextLabel.setBorder(raisedetched);
+		achievementsTextLabel.setFont(tabFont);
+		achievementsTextLabel.setOpaque(true);
+		achievementsTextLabel.setBackground(Color.GREEN);
+		achievementsTextPanel.add(achievementsTextLabel);
+		
+		achievementsTextLabel = new JLabel("Achievement 2");
+		achievementsTextLabel.setBorder(raisedetched);
+		achievementsTextLabel.setFont(tabFont);
+		achievementsTextLabel.setOpaque(true);
+		achievementsTextLabel.setBackground(Color.GREEN);
+		achievementsTextPanel.add(achievementsTextLabel);
+		
+		achievementsTextLabel = new JLabel("Achievement 3");
+		achievementsTextLabel.setBorder(raisedetched);
+		achievementsTextLabel.setFont(tabFont);
+		achievementsTextLabel.setOpaque(true);
+		achievementsTextLabel.setBackground(Color.LIGHT_GRAY);
 		achievementsTextPanel.add(achievementsTextLabel);
 		
 		//LeaderBoard Panel at TOP
 		JPanel leaderboardPanel = new JPanel();
 		leaderboardPanel.setLayout(new FlowLayout(FlowLayout.CENTER));
-		JLabel leaderboardLabel = new JLabel("LeaderBoard:");
+		JLabel leaderboardLabel = new JLabel("Leaderboard:");
 		leaderboardLabel.setFont(tabFont);
 		leaderboardPanel.add(leaderboardLabel);
 		//leaderBoardPanel.setBackground(Color.darkGray);
@@ -125,12 +144,12 @@ public class Stats {
 		leaderboardTextLabel.setFont(textFont);
 		leaderboardTextPanel.add(leaderboardTextLabel);
 		
-		//prints leaderboad
+		//prints leaderboad in label
 		leaderboardRank();
 		for(int x = 0; x < leaderboard.length; x++ ) {
-		leaderboardTextLabel = new JLabel(x+1+ ". "+leaderboard[x].getWorkHours());
-		leaderboardTextLabel.setFont(textFont);
-		leaderboardTextPanel.add(leaderboardTextLabel);
+			leaderboardTextLabel = new JLabel(x+1+ ".(name) "+leaderboard[x].getWorkHours());
+			leaderboardTextLabel.setFont(textFont);
+			leaderboardTextPanel.add(leaderboardTextLabel);
 		}
 		
 		// Buttons at the bottom
