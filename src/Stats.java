@@ -8,6 +8,7 @@ import java.awt.event.ActionListener;
 public class Stats {
 
 	Player player;
+	Player leaderboard[];
 	
 	final int WINDOW_WIDTH = 800; // Window width in pixels
 	final int WINDOW_HEIGHT = 600; // Window height in pixels
@@ -18,6 +19,31 @@ public class Stats {
         this.player = player;
         
     }
+    
+    public void leaderboardRank()
+    {
+    	//setting up dummy players
+    	Player dummy1 = new Player();
+    	dummy1.updateWorkHours(100);
+    	Player dummy2 = new Player();
+    	dummy2.updateWorkHours(900);
+    	Player dummy3 = new Player();
+    	dummy3.updateWorkHours(750);
+    	
+    	leaderboard = new Player[] {dummy1, dummy2, dummy3, player};
+    	
+    	//sorting leaderboard
+    	for(int i = 0; i < leaderboard.length-1; i++){
+    		for(int j = 0; j < leaderboard.length-i-1; j++){
+    			if (leaderboard[j].getWorkHours() < leaderboard[j+1].getWorkHours()){
+    				Player swap = leaderboard[j+1];
+    				leaderboard[j+1] = leaderboard[j];
+    				leaderboard[j] = swap;
+    			}
+    		}
+    	}
+    }
+    
 	
 	public void statsMenu() {
 		
@@ -98,7 +124,14 @@ public class Stats {
 		JLabel leaderboardTextLabel = new JLabel("~Leaderboard text~");
 		leaderboardTextLabel.setFont(textFont);
 		leaderboardTextPanel.add(leaderboardTextLabel);
-		 
+		
+		//prints leaderboad
+		leaderboardRank();
+		for(int x = 0; x < leaderboard.length; x++ ) {
+		leaderboardTextLabel = new JLabel(x+1+ ". "+leaderboard[x].getWorkHours());
+		leaderboardTextLabel.setFont(textFont);
+		leaderboardTextPanel.add(leaderboardTextLabel);
+		}
 		
 		// Buttons at the bottom
 		JPanel bottomPanel = new JPanel();
