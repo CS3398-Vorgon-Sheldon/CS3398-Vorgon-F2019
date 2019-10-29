@@ -1,6 +1,7 @@
 import javax.swing.*;
 import javax.swing.border.LineBorder;
 import javax.swing.event.ListSelectionEvent;
+import javax.swing.event.ListSelectionListener;
 import javax.swing.plaf.basic.BasicSplitPaneDivider;
 import javax.swing.text.SimpleAttributeSet;
 import javax.swing.text.StyleConstants;
@@ -91,61 +92,86 @@ public class Shop {
 				rightPanel.setBackground(Color.white);
 
 				// Shop Options
-				String[] shopOptions = { "Option 1", "Option 2", "Option 3", "Option 4", "Option 5" };
-				String[] optionFlavorTexts = { "Description 1", "Description 2", "Description 3", "Description 4", "Description 5" };
+				String[] shopOptions = { "Shop Item 1", "Shop Item 2", "Shop Item 3", "Shop Item 4", "Shop Item 5" };
+		String[] optionFlavorTexts = { "Item Description 1", "Item Description 2", "Item Description 3", "Item Description 4", "Item Description 5" };
+		
+		JList optionList = new JList<>(shopOptions);
+		optionList.setBorder(new LineBorder(Color.DARK_GRAY));
+		optionList.setFont(new Font("Arial", Font.PLAIN, 20));
+		optionList.setSelectedIndex(0);
 
-				JList optionList = new JList<>(shopOptions);
-				optionList.setBorder(new LineBorder(Color.DARK_GRAY));
-				optionList.setFont(new Font("Arial", Font.PLAIN, 20));
-				optionList.setSelectedIndex(0);
+		JTextPane flavorTextPane = new JTextPane();
+		//flavorTextArea.setBackground(Color.LIGHT_GRAY);
+		flavorTextPane.setBorder(new LineBorder(Color.DARK_GRAY));
+		flavorTextPane.setPreferredSize(new Dimension(400, 200));
+		flavorTextPane.setFont(new Font("Arial", Font.PLAIN, 20));
+		flavorTextPane.setEditable(false);
+		flavorTextPane.setText("\n" + optionFlavorTexts[0]);
+		
+		StyledDocument doc = flavorTextPane.getStyledDocument();
+		SimpleAttributeSet center = new SimpleAttributeSet();
+		StyleConstants.setAlignment(center, StyleConstants.ALIGN_CENTER);
+		doc.setParagraphAttributes(0, doc.getLength(), center, false);
 
-				JTextPane flavorTextPane = new JTextPane();
-				//flavorTextArea.setBackground(Color.LIGHT_GRAY);
-				flavorTextPane.setBorder(new LineBorder(Color.DARK_GRAY));
-				flavorTextPane.setPreferredSize(new Dimension(400, 200));
-				flavorTextPane.setFont(new Font("Arial", Font.PLAIN, 20));
-				flavorTextPane.setEditable(false);
-				flavorTextPane.setText("\n" + optionFlavorTexts[0]);
+		optionList.addListSelectionListener(new ListSelectionListener()
+		{
+		  public void valueChanged(ListSelectionEvent e)
+		  {
+			if (e.getValueIsAdjusting() == false)
+			{
+				flavorTextPane.setText("\n" + optionFlavorTexts[optionList.getSelectedIndex()]);
+			}
+			else
+			{
+			  //System.out.println("The value is adjusting.");
+			}
+		  }
+		});
 
-				StyledDocument doc = flavorTextPane.getStyledDocument();
-				SimpleAttributeSet center = new SimpleAttributeSet();
-				StyleConstants.setAlignment(center, StyleConstants.ALIGN_CENTER);
-				doc.setParagraphAttributes(0, doc.getLength(), center, false);
+		gbc.fill = GridBagConstraints.HORIZONTAL;
+		leftPanel.add(optionList, gbc);
+		leftPanel.add(Box.createRigidArea(new Dimension(50, 15)), gbc);
+		gbc.fill = GridBagConstraints.NONE;
+		leftPanel.add(flavorTextPane, gbc);
 
-				gbc.fill = GridBagConstraints.HORIZONTAL;
-				leftPanel.add(optionList, gbc);
-				leftPanel.add(Box.createRigidArea(new Dimension(50, 15)), gbc);
-				gbc.fill = GridBagConstraints.NONE;
-				leftPanel.add(flavorTextPane, gbc);
+		JComboBox shopBox = new JComboBox<>(shopOptions);
+        shopBox.setBackground(Color.white);
+		shopBox.setBorder(new LineBorder(Color.DARK_GRAY));
+		shopBox.setFont(new Font("Arial", Font.PLAIN, 20));
 
-				JComboBox shopBox = new JComboBox<>(shopOptions);
-		    shopBox.setBackground(Color.white);
-				shopBox.setBorder(new LineBorder(Color.DARK_GRAY));
-				shopBox.setFont(new Font("Arial", Font.PLAIN, 20));
+		JButton buyButton = new JButton("Buy");
+        buyButton.setBackground(new Color(133, 187, 101)); //green
+		buyButton.setBorder(new LineBorder(Color.DARK_GRAY));
+		buyButton.setPreferredSize(new Dimension(60, 40));
+		buyButton.setFont(new Font("Arial", Font.PLAIN, 20));
+		buyButton.setFocusPainted(false);
 
-				JButton buyButton = new JButton("Buy");
-		    buyButton.setBackground(new Color(133, 187, 101)); //green
-				buyButton.setBorder(new LineBorder(Color.DARK_GRAY));
-				buyButton.setPreferredSize(new Dimension(60, 40));
-				buyButton.setFont(new Font("Arial", Font.PLAIN, 20));
-				buyButton.setFocusPainted(false);
+		buyButton.addActionListener(new ActionListener()
+	    {
+			public void actionPerformed(ActionEvent e)
+			{
+				//code to buy item
+				String s = String.valueOf("Buy: " + shopBox.getSelectedItem());
+				JOptionPane.showMessageDialog(null, s);
+			}
+	    });
 
-				gbc.fill = GridBagConstraints.HORIZONTAL;
-				rightPanel.add(shopBox, gbc);
-				rightPanel.add(Box.createRigidArea(new Dimension(50, 15)), gbc);
-				gbc.fill = GridBagConstraints.NONE;
-				rightPanel.add(buyButton, gbc);
+		gbc.fill = GridBagConstraints.HORIZONTAL;
+		rightPanel.add(shopBox, gbc);
+		rightPanel.add(Box.createRigidArea(new Dimension(50, 15)), gbc);
+		gbc.fill = GridBagConstraints.NONE;
+		rightPanel.add(buyButton, gbc);
 
-				JSplitPane centerSplitPane = new JSplitPane(SwingConstants.VERTICAL, leftPanel, rightPanel);
-				centerSplitPane.setResizeWeight(0.5);
-				centerSplitPane.setOrientation(SwingConstants.VERTICAL);
+		JSplitPane centerSplitPane = new JSplitPane(SwingConstants.VERTICAL, leftPanel, rightPanel);
+		centerSplitPane.setResizeWeight(0.5);
+		centerSplitPane.setOrientation(SwingConstants.VERTICAL);
 
-				// Set JSplitPane divider color
-				BasicSplitPaneDivider divider = (BasicSplitPaneDivider)centerSplitPane.getComponent(2);
-				divider.setBorder(new LineBorder(Color.LIGHT_GRAY, 5));
-				divider.setLayout(new FlowLayout(FlowLayout.CENTER, 0, 0));
+		// Set JSplitPane divider color
+		BasicSplitPaneDivider divider = (BasicSplitPaneDivider)centerSplitPane.getComponent(2);
+		divider.setBorder(new LineBorder(Color.LIGHT_GRAY, 5));
+		divider.setLayout(new FlowLayout(FlowLayout.CENTER, 0, 0));
 
-				shopFrame.add(centerSplitPane, BorderLayout.CENTER);
+		shopFrame.add(centerSplitPane, BorderLayout.CENTER);
 
 				// Buttons at the bottom
 				JPanel bottomPanel = new JPanel();

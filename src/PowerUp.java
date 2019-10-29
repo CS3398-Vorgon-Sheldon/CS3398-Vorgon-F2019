@@ -1,5 +1,7 @@
 import javax.swing.*;
 import javax.swing.border.LineBorder;
+import javax.swing.event.ListSelectionEvent;
+import javax.swing.event.ListSelectionListener;
 import javax.swing.plaf.basic.BasicSplitPaneDivider;
 import javax.swing.text.SimpleAttributeSet;
 import javax.swing.text.StyleConstants;
@@ -47,7 +49,7 @@ public class PowerUp {
 		
 		// Power ups Options
 		String[] powerUpOptions = { "Power Up 1", "Power Up 2", "Power Up 3", "Power Up 4", "Power Up 5" };
-		String[] optionFlavorTexts = { "Description 1", "Description 2", "Description 3", "Description 4", "Description 5" };
+		String[] optionFlavorTexts = { "Description of ability 1", "Description of ability 2", "Description of ability 3", "Description of ability 4", "Description of ability 5" };
 
 		JList optionList = new JList<>(powerUpOptions);
 		optionList.setBorder(new LineBorder(Color.DARK_GRAY));
@@ -67,29 +69,54 @@ public class PowerUp {
 		StyleConstants.setAlignment(center, StyleConstants.ALIGN_CENTER);
 		doc.setParagraphAttributes(0, doc.getLength(), center, false);
 
+		optionList.addListSelectionListener(new ListSelectionListener()
+		{
+		  public void valueChanged(ListSelectionEvent e)
+		  {
+			if (e.getValueIsAdjusting() == false)
+			{
+				flavorTextPane.setText("\n" + optionFlavorTexts[optionList.getSelectedIndex()]);
+			}
+			else
+			{
+			  //System.out.println("The value is adjusting.");
+			}
+		  }
+		});
+
 		gbc.fill = GridBagConstraints.HORIZONTAL;
 		leftPanel.add(optionList, gbc);
 		leftPanel.add(Box.createRigidArea(new Dimension(50, 15)), gbc);
 		gbc.fill = GridBagConstraints.NONE;
 		leftPanel.add(flavorTextPane, gbc);
 
-		JComboBox shopBox = new JComboBox<>(powerUpOptions);
-        shopBox.setBackground(Color.white);
-		shopBox.setBorder(new LineBorder(Color.DARK_GRAY));
-		shopBox.setFont(new Font("Arial", Font.PLAIN, 20));
+		JComboBox powerUpBox = new JComboBox<>(powerUpOptions);
+        powerUpBox.setBackground(Color.white);
+		powerUpBox.setBorder(new LineBorder(Color.DARK_GRAY));
+		powerUpBox.setFont(new Font("Arial", Font.PLAIN, 20));
 
-		JButton buyButton = new JButton("Activate");
-        buyButton.setBackground(Color.ORANGE);
-		buyButton.setBorder(new LineBorder(Color.DARK_GRAY));
-		buyButton.setPreferredSize(new Dimension(85, 40));
-		buyButton.setFont(new Font("Arial", Font.PLAIN, 20));
-		buyButton.setFocusPainted(false);
+		JButton activateButton = new JButton("Activate");
+        activateButton.setBackground(Color.ORANGE);
+		activateButton.setBorder(new LineBorder(Color.DARK_GRAY));
+		activateButton.setPreferredSize(new Dimension(85, 40));
+		activateButton.setFont(new Font("Arial", Font.PLAIN, 20));
+		activateButton.setFocusPainted(false);
+
+		activateButton.addActionListener(new ActionListener()
+	    {
+			public void actionPerformed(ActionEvent e)
+			{
+				//code to activate power up
+				String s = String.valueOf("Activate: " + powerUpBox.getSelectedItem());
+				JOptionPane.showMessageDialog(null, s);
+			}
+	    });
 
 		gbc.fill = GridBagConstraints.HORIZONTAL;
-		rightPanel.add(shopBox, gbc);
+		rightPanel.add(powerUpBox, gbc);
 		rightPanel.add(Box.createRigidArea(new Dimension(50, 15)), gbc);
 		gbc.fill = GridBagConstraints.NONE;
-		rightPanel.add(buyButton, gbc);
+		rightPanel.add(activateButton, gbc);
 
 		JSplitPane centerSplitPane = new JSplitPane(SwingConstants.VERTICAL, leftPanel, rightPanel);
 		centerSplitPane.setResizeWeight(0.5);
@@ -116,11 +143,11 @@ public class PowerUp {
 		// Exit back to main game
 		exitButton.addActionListener(new ActionListener()
 	    {
-	      public void actionPerformed(ActionEvent e)
-	      {
-			  powerUpFrame.setVisible(false);
-	      }
-	    }); 	 
+			public void actionPerformed(ActionEvent e)
+			{
+				powerUpFrame.setVisible(false);
+			}
+	    });
 		 
 		bottomPanel.add(exitButton);
 		 
