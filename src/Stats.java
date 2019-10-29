@@ -27,10 +27,13 @@ public class Stats {
     	//setting up dummy players
     	Player dummy1 = new Player();
     	dummy1.updateWorkHours(100);
+    	dummy1.setName("John");
     	Player dummy2 = new Player();
     	dummy2.updateWorkHours(900);
+    	dummy2.setName("Steve");
     	Player dummy3 = new Player();
     	dummy3.updateWorkHours(750);
+    	dummy3.setName("Max");
     	
     	leaderboard = new Player[] {dummy1, dummy2, dummy3, player};
     	
@@ -147,7 +150,7 @@ public class Stats {
 		//prints leaderboad in label
 		leaderboardRank();
 		for(int x = 0; x < leaderboard.length; x++ ) {
-			leaderboardTextLabel = new JLabel(x+1+ ".(name) "+leaderboard[x].getWorkHours());
+			leaderboardTextLabel = new JLabel(x+1+ "."+leaderboard[x].getName()+ " "+leaderboard[x].getWorkHours());
 			leaderboardTextLabel.setFont(textFont);
 			leaderboardTextPanel.add(leaderboardTextLabel);
 		}

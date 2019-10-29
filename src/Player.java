@@ -14,6 +14,7 @@ public class Player {
     private int money;
     private int prestige;
     private int level;                                        //level is calculated by hours worked to unlock
+    private String name;
     // array of current upgrades
     //private Upgrades upgrades[];
     private boolean debug = true;
@@ -64,6 +65,11 @@ public class Player {
 
     public void displayLevel(){
         System.out.println("Current Level: " + level);
+    }
+    
+    public void setName(String str)
+    {
+    	name = str; 
     }
 
 
@@ -126,6 +132,7 @@ public class Player {
     public int getMoney(){ return money; }
     public int getLevel(){ return level; }
     public int getClickPower() { return clickPower; }
+    public String getName(){ return name;}
 
 //setters
     public void setClickPower(int count) {clickPower = count;}
