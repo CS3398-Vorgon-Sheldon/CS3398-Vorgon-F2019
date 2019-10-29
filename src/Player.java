@@ -86,19 +86,7 @@ public class Player {
 
     }
 
-    //sets clickPower
-    public void setClickPower(int count) {
 
-    	clickPower = count;
-
-    }//end setClickPower
-
-    //returns clickPower
-    public int getClickPower() {
-
-    	return clickPower;
-
-    }//end getClickPower
 
     /*
     called after purchasing upgrades or after reseting. Determines the clicking

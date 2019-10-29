@@ -15,7 +15,7 @@ public class Controller implements MouseListener {
     Shop shop;
     PowerUp powerUp;
     Stats stats;
-    Client client;
+    ClientList clientList;
 
 
     Controller() throws IOException, Exception{
@@ -25,8 +25,8 @@ public class Controller implements MouseListener {
         shop = new Shop(player);
         powerUp = new PowerUp(player);
         stats = new Stats(player);
-        client = new Client();
-        
+        clientList = new ClientList();
+
         new Timer(10, view).start();
     }
 
@@ -59,7 +59,7 @@ public class Controller implements MouseListener {
 
     // main
     public static void main(String[] args) throws Exception{
-        //playMusic("Mario.wav");      
+        //playMusic("Mario.wav");
         Controller game = new Controller();
     }
 

@@ -39,10 +39,10 @@ public class View extends JFrame implements ActionListener {
     //String jobOptions[] = { "Job 1", "Job 2", "Job 3" };
     //String powerOptions[] = { "Power up 1", "Power up 2", "Power up 3" };
     //String shopOptions[] = { "Plus 1: $20", "Auto Clicks: $50", "Employee Upgrade: $100" };
-    
+
     final int WINDOW_WIDTH = 800; // Window width in pixels
     final int WINDOW_HEIGHT = 600; // Window height in pixels
-    
+
 	JLabel counterLabel;
 	JButton jobsButton, powerUpButton, shopButton, statsButton;
 
@@ -73,11 +73,11 @@ public class View extends JFrame implements ActionListener {
 
         // Set the size of the window.
         setSize(WINDOW_WIDTH, WINDOW_HEIGHT);
-     
+
         /*
         getContentPane().add(workDeskLabel,BorderLayout.WEST);  //for showing desk image
         getContentPane().add(new MyPanel(c), BorderLayout.CENTER);
-        
+
 
         JPanel topPanel = new JPanel();
         topPanel.setBackground(Color.darkGray);
@@ -98,7 +98,7 @@ public class View extends JFrame implements ActionListener {
         gbc.weighty = 1.0;
         JPanel sidePanel = new JPanel(sideLayout);
         sidePanel.setBackground(Color.darkGray);
-        
+
 
         gbc.fill = GridBagConstraints.HORIZONTAL;
         gbc.gridx = 0;
@@ -110,11 +110,11 @@ public class View extends JFrame implements ActionListener {
         gbc.fill = GridBagConstraints.HORIZONTAL;
         gbc.gridx = 0;
         gbc.gridy++;
-        
+
         JComboBox jobBox = new JComboBox(jobOptions);
         //sidePanel.add(new JComboBox<>(jobOptions), gbc);
         sidePanel.add(jobBox, gbc);
-        
+
         gbc.gridx = 1;
         sidePanel.add(jobButton, gbc);
         gbc.gridx = 0;
@@ -125,18 +125,18 @@ public class View extends JFrame implements ActionListener {
         sidePanel.add(jobFlavorLabel, gbc);
         gbc.gridx = 1;
         sidePanel.add(jobLabel, gbc);  //shows job image
-        
+
 
         gbc.gridwidth = 1;
         gbc.fill = GridBagConstraints.HORIZONTAL;
         gbc.gridx = 0;
         gbc.gridy++;
-        
+
         JComboBox powerBox = new JComboBox(powerOptions);
         //sidePanel.add(new JComboBox<>(powerOptions), gbc);
         sidePanel.add(powerBox, gbc);
-        
-        
+
+
         gbc.gridx = 1;
         sidePanel.add(powerButton, gbc);
         gbc.gridx = 0;
@@ -152,13 +152,13 @@ public class View extends JFrame implements ActionListener {
         gbc.fill = GridBagConstraints.HORIZONTAL;
         gbc.gridx = 0;
         gbc.gridy++;
-        
-        
-        
+
+
+
         JComboBox shopBox = new JComboBox(shopOptions);
         //sidePanel.add(new JComboBox<>(shopOptions), gbc);
         sidePanel.add(shopBox, gbc);
-        
+
         gbc.gridx = 1;
         sidePanel.add(shopButton, gbc);
         gbc.gridx = 0;
@@ -176,7 +176,7 @@ public class View extends JFrame implements ActionListener {
 
         //Layout
         setLayout(new BorderLayout());
-     
+
 	    // Specify what happens when the close button is clicked.
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
@@ -220,7 +220,7 @@ public class View extends JFrame implements ActionListener {
         //Buttons at the bottom
         JPanel bottomPanel = new JPanel();
         bottomPanel.setLayout(new FlowLayout(FlowLayout.CENTER));
-        
+
         jobsButton = new JButton();
         powerUpButton = new JButton();
         shopButton = new JButton();
@@ -264,7 +264,7 @@ public class View extends JFrame implements ActionListener {
         {
           public void actionPerformed(ActionEvent e)
           {
-            c.client.clientMenu();
+            c.clientList.clientMenu();
             // Add code to open jobs page
           }
         });
@@ -289,14 +289,14 @@ public class View extends JFrame implements ActionListener {
             /*
             //if user's wallet is less than cost. They cannot purchase
         	if(c.player.getMoney() < c.shop.getCost(shopBox.getSelectedIndex())) {
-        	   		  
+
         	 //display error message
-        	 
+
         	} else {
-        	 
+
         	 //purchase upgrade
         	 c.shop.purchase(shopBox.getSelectedIndex());
-        	 
+
         	}
         	*/
           }
@@ -317,7 +317,7 @@ public class View extends JFrame implements ActionListener {
 
         // Display the window.
         setVisible(true);
-        
+
     }
 
     public void actionPerformed(ActionEvent e) { repaint(); }
