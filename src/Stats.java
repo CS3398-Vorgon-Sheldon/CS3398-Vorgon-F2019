@@ -29,38 +29,72 @@ public class Stats {
 		statsFrame.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
 		statsFrame.getContentPane().setBackground(Color.white);
 		
-		// ~Stats Options~
+		Font tabFont = new Font("Arial", Font.BOLD, 25);
+		Font textFont = new Font("Arial", Font.BOLD, 18);
+		//Border raisedetched = BorderFactory.createEtchedBorder(EtchedBorder.RAISED); 
 		
+	//~~~Tabs and respective text Panels~~~
+		
+		JPanel topPanel = new JPanel();
+		topPanel.setLayout(new GridLayout(0,3));
 		JPanel centerPanel = new JPanel();
 		centerPanel.setLayout(new GridLayout(0,3));
 		
-		Font tabFont = new Font("Arial", Font.BOLD, 25);
 		
-		//General Stats Panel
+		//Stats Panel at TOP
 		JPanel statsPanel = new JPanel();
 		statsPanel.setLayout(new FlowLayout(FlowLayout.CENTER));
-		JLabel statsLabel = new JLabel("Stats:\n");
+		JLabel statsLabel = new JLabel("Stats:");
 		statsLabel.setFont(tabFont);
 		statsPanel.add(statsLabel);
-		//statsPanel.setLayout(new FlowLayout(FlowLayout.LEFT));
-		JLabel infoLabel = new JLabel("level");
-		statsPanel.add(infoLabel);
 		
-		//Achievements Panel
+		//text for Stats tab
+		JPanel statsTextPanel = new JPanel();
+		statsTextPanel.setLayout(new BoxLayout(statsTextPanel, BoxLayout.PAGE_AXIS));
+		statsTextPanel.setBackground(Color.WHITE);
+		
+		JLabel statsTextLabel = new JLabel("Level:");
+		statsTextLabel.setFont(textFont);
+		statsTextPanel.add(statsTextLabel);
+		statsTextLabel.setText("Total Clicks:");
+		statsTextPanel.add(statsTextLabel);
+		statsTextLabel.setText("Total Hours:");
+		statsTextPanel.add(statsTextLabel);
+		statsTextLabel.setText("Total Cash:");
+		statsTextPanel.add(statsTextLabel);
+		
+		//Achievements Panel at TOP
 		JPanel achievementsPanel = new JPanel();
-		//achievementsPanel.setPreferredSize(200,200);
 		achievementsPanel.setLayout(new FlowLayout(FlowLayout.CENTER));
 		JLabel achievementsLabel = new JLabel("Achievements:");
 		achievementsLabel.setFont(tabFont);
 		achievementsPanel.add(achievementsLabel);
 		
-		//LeaderBoard Panel
-		JPanel leaderBoardPanel = new JPanel();
-		leaderBoardPanel.setLayout(new FlowLayout(FlowLayout.CENTER));
-		JLabel leaderBoardLabel = new JLabel("LeaderBoard:");
-		leaderBoardLabel.setFont(tabFont);
-		leaderBoardPanel.add(leaderBoardLabel);
+		//text for Achievements tab
+		JPanel achievementsTextPanel = new JPanel();
+		achievementsTextPanel.setLayout(new BoxLayout(achievementsTextPanel, BoxLayout.PAGE_AXIS));
+		achievementsTextPanel.setBackground(Color.WHITE);
+		
+		JLabel achievementsTextLabel = new JLabel("~Achievement text~");
+		achievementsTextLabel.setFont(textFont);
+		achievementsTextPanel.add(achievementsTextLabel);
+		
+		//LeaderBoard Panel at TOP
+		JPanel leaderboardPanel = new JPanel();
+		leaderboardPanel.setLayout(new FlowLayout(FlowLayout.CENTER));
+		JLabel leaderboardLabel = new JLabel("LeaderBoard:");
+		leaderboardLabel.setFont(tabFont);
+		leaderboardPanel.add(leaderboardLabel);
 		//leaderBoardPanel.setBackground(Color.darkGray);
+		
+		//text for LeaderBoard tab
+		JPanel leaderboardTextPanel = new JPanel();
+		leaderboardTextPanel.setLayout(new BoxLayout(leaderboardTextPanel, BoxLayout.PAGE_AXIS));
+		leaderboardTextPanel.setBackground(Color.WHITE);
+				
+		JLabel leaderboardTextLabel = new JLabel("~Leaderboard text~");
+		leaderboardTextLabel.setFont(textFont);
+		leaderboardTextPanel.add(leaderboardTextLabel);
 		 
 		
 		// Buttons at the bottom
@@ -85,12 +119,21 @@ public class Stats {
 		 
 		bottomPanel.add(exitButton);
 		 
-		statsFrame.add(bottomPanel, BorderLayout.SOUTH);
 		
+	//~~Frame and Panel management~~
+		statsFrame.add(bottomPanel, BorderLayout.SOUTH);
 		statsFrame.add(centerPanel, BorderLayout.CENTER);
-		centerPanel.add(statsPanel, BorderLayout.LINE_START);
-		centerPanel.add(achievementsPanel, BorderLayout.CENTER);
-		centerPanel.add(leaderBoardPanel, BorderLayout.LINE_END);
+		statsFrame.add(topPanel, BorderLayout.NORTH);
+		
+		//Top tabs
+		topPanel.add(statsPanel);
+		topPanel.add(achievementsPanel);
+		topPanel.add(leaderboardPanel);
+		
+		//Text panels
+		centerPanel.add(statsTextPanel);
+		centerPanel.add(achievementsTextPanel);
+		centerPanel.add(leaderboardTextPanel);
 		
 		
 		statsFrame.setLocationRelativeTo(null);
