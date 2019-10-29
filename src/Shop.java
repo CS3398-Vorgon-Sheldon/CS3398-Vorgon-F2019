@@ -90,7 +90,7 @@ public class Shop {
 		rightPanel.setBackground(Color.white);
 		
 		// Shop Options
-		String[] shopOptions = { "Option 1", "Option 2", "Option 3", "Option 4", "Option 5" };
+		String[] shopOptions = { "Shop Item 1", "Shop Item 2", "Shop Item 3", "Shop Item 4", "Shop Item 5" };
 		String[] optionFlavorTexts = { "Description 1", "Description 2", "Description 3", "Description 4", "Description 5" };
 		
 		JList optionList = new JList<>(shopOptions);
@@ -149,7 +149,7 @@ public class Shop {
 		// Buttons at the bottom
 		JPanel bottomPanel = new JPanel();
 		bottomPanel.setLayout(new FlowLayout(FlowLayout.CENTER));
-		bottomPanel.setBackground(Color.LIGHT_GRAY);
+		//bottomPanel.setBackground(Color.LIGHT_GRAY);
 		 
 		JButton exitButton = new JButton("Exit");
         exitButton.setBackground(Color.white);
