@@ -224,33 +224,31 @@ public class View extends JFrame implements ActionListener {
         jobsButton = new JButton();
         powerUpButton = new JButton();
         shopButton = new JButton();
-        statsButton = new JButton("Stats");
+        statsButton = new JButton();
 
         jobsButton.setIcon(jobIcon);
         jobsButton.setBackground(Color.white);
         jobsButton.setBorder(new LineBorder(Color.DARK_GRAY));
         jobsButton.setToolTipText("Clients");
-		jobsButton.setFocusPainted(false);
+		    jobsButton.setFocusPainted(false);
 
         powerUpButton.setIcon(powerUpIcon);
         powerUpButton.setBackground(Color.white);
         powerUpButton.setBorder(new LineBorder(Color.DARK_GRAY));
         powerUpButton.setToolTipText("Power Ups");
-		powerUpButton.setFocusPainted(false);
+		    powerUpButton.setFocusPainted(false);
 
         shopButton.setIcon(shopIcon);
         shopButton.setBackground(Color.white);
         shopButton.setBorder(new LineBorder(Color.DARK_GRAY));
         shopButton.setToolTipText("Shop");
-		shopButton.setFocusPainted(false);
+		    shopButton.setFocusPainted(false);
 
-        statsButton.setIcon(statsIcon); //need image
+        statsButton.setIcon(statsIcon);
         statsButton.setBackground(Color.white);
         statsButton.setBorder(new LineBorder(Color.DARK_GRAY));
         statsButton.setToolTipText("Statistics");
-        statsButton.setPreferredSize(new Dimension(shopIcon.getIconWidth(), shopIcon.getIconHeight()));
-		statsButton.setFont(new Font("Arial", Font.PLAIN, 20));
-		statsButton.setFocusPainted(false);
+        statsButton.setFocusPainted(false);
 
         bottomPanel.add(jobsButton);
         bottomPanel.add(powerUpButton);

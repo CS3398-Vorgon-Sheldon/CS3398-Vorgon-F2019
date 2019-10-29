@@ -93,19 +93,19 @@ public class ClientList {
         // Clients Options
 //---------------------------------------------------------------------------------------------------------------------------------
         JPanel leftPanel = new JPanel();
-    		leftPanel.setBorder(BorderFactory.createEmptyBorder(0, 5, 0, 5));
-    		leftPanel.setLayout(new GridBagLayout());
-    		GridBagConstraints gbc = new GridBagConstraints();
-    		gbc.gridwidth = GridBagConstraints.REMAINDER;
-    		leftPanel.setBackground(Color.white);
+    	leftPanel.setBorder(BorderFactory.createEmptyBorder(0, 5, 0, 5));
+    	leftPanel.setLayout(new GridBagLayout());
+    	GridBagConstraints gbc = new GridBagConstraints();
+    	gbc.gridwidth = GridBagConstraints.REMAINDER;
+    	leftPanel.setBackground(Color.white);
 
-    		JPanel rightPanel = new JPanel();
-    		rightPanel.setBorder(BorderFactory.createEmptyBorder(0, 5, 0, 5));
-    		rightPanel.setLayout(new GridBagLayout());
-    		rightPanel.setBackground(Color.white);
+    	JPanel rightPanel = new JPanel();
+    	rightPanel.setBorder(BorderFactory.createEmptyBorder(0, 5, 0, 5));
+    	rightPanel.setLayout(new GridBagLayout());
+    	rightPanel.setBackground(Color.white);
 
-    		// Shop Options
-    		String[] clientOptions = { "Client 1", "Client 2", "Client 3", "Client 4", "Client 5" };
+    	// Shop Options
+    	String[] clientOptions = { "Client 1", "Client 2", "Client 3", "Client 4", "Client 5" };
         String[] optionFlavorTexts = { "Job Description 1", "Job Description 2", "Job Description 3", "Job Description 4", "Job Description 5" };
         
         JList optionList = new JList<>(clientOptions);
@@ -201,12 +201,12 @@ public class ClientList {
 
         // Exit back to main game
         exitButton.addActionListener(new ActionListener()
-          {
+        {
             public void actionPerformed(ActionEvent e)
             {
-                  clientFrame.setVisible(false);
+                clientFrame.setVisible(false);
             }
-          });
+        });
 
         bottomPanel.add(exitButton);
 
