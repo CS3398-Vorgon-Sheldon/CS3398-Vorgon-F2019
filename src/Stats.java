@@ -53,14 +53,17 @@ public class Stats {
 		statsTextPanel.setLayout(new BoxLayout(statsTextPanel, BoxLayout.PAGE_AXIS));
 		statsTextPanel.setBackground(Color.WHITE);
 		
-		JLabel statsTextLabel = new JLabel("Level:");
+		JLabel statsTextLabel = new JLabel("Level: " + player.getLevel());
 		statsTextLabel.setFont(textFont);
 		statsTextPanel.add(statsTextLabel);
-		statsTextLabel.setText("Total Clicks:");
+		statsTextLabel = new JLabel("Total Clicks: ");
+		statsTextLabel.setFont(textFont);
 		statsTextPanel.add(statsTextLabel);
-		statsTextLabel.setText("Total Hours:");
+		statsTextLabel = new JLabel("Total Hours: " + player.getWorkHours());
+		statsTextLabel.setFont(textFont);
 		statsTextPanel.add(statsTextLabel);
-		statsTextLabel.setText("Total Cash:");
+		statsTextLabel = new JLabel("Total Money: " + player.getMoney());
+		statsTextLabel.setFont(textFont);
 		statsTextPanel.add(statsTextLabel);
 		
 		//Achievements Panel at TOP
