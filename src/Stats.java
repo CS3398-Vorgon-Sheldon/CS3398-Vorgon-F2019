@@ -1,4 +1,6 @@
 import javax.swing.*;
+import javax.swing.border.Border;
+import javax.swing.border.EtchedBorder;
 import javax.swing.border.LineBorder;
 
 import java.awt.*;
@@ -8,6 +10,7 @@ import java.awt.event.ActionListener;
 public class Stats {
 
 	Player player;
+	Player leaderboard[];
 	
 	final int WINDOW_WIDTH = 800; // Window width in pixels
 	final int WINDOW_HEIGHT = 600; // Window height in pixels
@@ -18,6 +21,31 @@ public class Stats {
         this.player = player;
         
     }
+    
+    public void leaderboardRank()
+    {
+    	//setting up dummy players
+    	Player dummy1 = new Player();
+    	dummy1.updateWorkHours(100);
+    	Player dummy2 = new Player();
+    	dummy2.updateWorkHours(900);
+    	Player dummy3 = new Player();
+    	dummy3.updateWorkHours(750);
+    	
+    	leaderboard = new Player[] {dummy1, dummy2, dummy3, player};
+    	
+    	//sorting leaderboard
+    	for(int i = 0; i < leaderboard.length-1; i++){
+    		for(int j = 0; j < leaderboard.length-i-1; j++){
+    			if (leaderboard[j].getWorkHours() < leaderboard[j+1].getWorkHours()){
+    				Player swap = leaderboard[j+1];
+    				leaderboard[j+1] = leaderboard[j];
+    				leaderboard[j] = swap;
+    			}
+    		}
+    	}
+    }
+    
 	
 	public void statsMenu() {
 		
@@ -31,7 +59,7 @@ public class Stats {
 		
 		Font tabFont = new Font("Arial", Font.BOLD, 25);
 		Font textFont = new Font("Arial", Font.BOLD, 18);
-		//Border raisedetched = BorderFactory.createEtchedBorder(EtchedBorder.RAISED); 
+		Border raisedetched = BorderFactory.createEtchedBorder(EtchedBorder.RAISED); 
 		
 	//~~~Tabs and respective text Panels~~~
 		
@@ -53,14 +81,17 @@ public class Stats {
 		statsTextPanel.setLayout(new BoxLayout(statsTextPanel, BoxLayout.PAGE_AXIS));
 		statsTextPanel.setBackground(Color.WHITE);
 		
-		JLabel statsTextLabel = new JLabel("Level:");
+		JLabel statsTextLabel = new JLabel("Level: " + player.getLevel());
 		statsTextLabel.setFont(textFont);
 		statsTextPanel.add(statsTextLabel);
-		statsTextLabel.setText("Total Clicks:");
+		statsTextLabel = new JLabel("Total Clicks: ");
+		statsTextLabel.setFont(textFont);
 		statsTextPanel.add(statsTextLabel);
-		statsTextLabel.setText("Total Hours:");
+		statsTextLabel = new JLabel("Total Hours: " + player.getWorkHours());
+		statsTextLabel.setFont(textFont);
 		statsTextPanel.add(statsTextLabel);
-		statsTextLabel.setText("Total Cash:");
+		statsTextLabel = new JLabel("Total Money: " + player.getMoney());
+		statsTextLabel.setFont(textFont);
 		statsTextPanel.add(statsTextLabel);
 		
 		//Achievements Panel at TOP
@@ -75,14 +106,31 @@ public class Stats {
 		achievementsTextPanel.setLayout(new BoxLayout(achievementsTextPanel, BoxLayout.PAGE_AXIS));
 		achievementsTextPanel.setBackground(Color.WHITE);
 		
-		JLabel achievementsTextLabel = new JLabel("~Achievement text~");
-		achievementsTextLabel.setFont(textFont);
+		JLabel achievementsTextLabel = new JLabel("Achievement 1");
+		achievementsTextLabel.setBorder(raisedetched);
+		achievementsTextLabel.setFont(tabFont);
+		achievementsTextLabel.setOpaque(true);
+		achievementsTextLabel.setBackground(Color.GREEN);
+		achievementsTextPanel.add(achievementsTextLabel);
+		
+		achievementsTextLabel = new JLabel("Achievement 2");
+		achievementsTextLabel.setBorder(raisedetched);
+		achievementsTextLabel.setFont(tabFont);
+		achievementsTextLabel.setOpaque(true);
+		achievementsTextLabel.setBackground(Color.GREEN);
+		achievementsTextPanel.add(achievementsTextLabel);
+		
+		achievementsTextLabel = new JLabel("Achievement 3");
+		achievementsTextLabel.setBorder(raisedetched);
+		achievementsTextLabel.setFont(tabFont);
+		achievementsTextLabel.setOpaque(true);
+		achievementsTextLabel.setBackground(Color.LIGHT_GRAY);
 		achievementsTextPanel.add(achievementsTextLabel);
 		
 		//LeaderBoard Panel at TOP
 		JPanel leaderboardPanel = new JPanel();
 		leaderboardPanel.setLayout(new FlowLayout(FlowLayout.CENTER));
-		JLabel leaderboardLabel = new JLabel("LeaderBoard:");
+		JLabel leaderboardLabel = new JLabel("Leaderboard:");
 		leaderboardLabel.setFont(tabFont);
 		leaderboardPanel.add(leaderboardLabel);
 		//leaderBoardPanel.setBackground(Color.darkGray);
@@ -95,7 +143,14 @@ public class Stats {
 		JLabel leaderboardTextLabel = new JLabel("~Leaderboard text~");
 		leaderboardTextLabel.setFont(textFont);
 		leaderboardTextPanel.add(leaderboardTextLabel);
-		 
+		
+		//prints leaderboad in label
+		leaderboardRank();
+		for(int x = 0; x < leaderboard.length; x++ ) {
+			leaderboardTextLabel = new JLabel(x+1+ ".(name) "+leaderboard[x].getWorkHours());
+			leaderboardTextLabel.setFont(textFont);
+			leaderboardTextPanel.add(leaderboardTextLabel);
+		}
 		
 		// Buttons at the bottom
 		JPanel bottomPanel = new JPanel();
