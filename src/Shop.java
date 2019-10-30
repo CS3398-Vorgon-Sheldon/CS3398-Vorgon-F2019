@@ -16,11 +16,15 @@ import java.awt.event.ActionListener;
 public class Shop {
 
 	Player player;
-
-	private int cost[] = new int[]{20, 50, 100};
+	
+	//menu
+	private int cost[] = new int[]{40, 100, 150};
 
 	final int WINDOW_WIDTH = 800; // Window width in pixels
 	final int WINDOW_HEIGHT = 600; // Window height in pixels
+	
+	boolean plus_1_bought;
+	boolean auto_clicker_bought;
 
 
     public Shop(Player player){
@@ -28,25 +32,29 @@ public class Shop {
         this.player = player;
 
     }//end shop
-
+    
+    public boolean confrim_plus_1() {
+    	return plus_1_bought;
+    }//end
+    
+    public boolean confirm_auto_clicker() {
+    	return auto_clicker_bought;
+    }//end 
+    
     public void purchase(int index) {
 
     	switch(index) {
 
-
     		case 0:
-    			player.setClickPower(player.getClickPower() + 1);
-    			player.updateMoney(-(getCost(index)));
-    			updateCost(index);
-    			break;
-
+    			 plus_1_bought = true;
+    			 player.updateMoney(-(getCost(index)));
+    			 updateCost(index);
+    			 break;
     		case 1:
-    			player.setTimer(true, 1000);
+    			auto_clicker_bought=true;
     			player.updateMoney(-(getCost(index)));
     			updateCost(index);
     			break;
-
-    		case 2:
 
 
     	}//end switch
@@ -92,8 +100,16 @@ public class Shop {
 			rightPanel.setBackground(Color.white);
 
 			// Shop Options
-			String[] shopOptions = { "Shop Item 1", "Shop Item 2", "Shop Item 3", "Shop Item 4", "Shop Item 5" };
-			String[] optionFlavorTexts = { "Item Description 1", "Item Description 2", "Item Description 3", "Item Description 4", "Item Description 5" };
+			String[] shopOptions = { "$" + getCost(0) + ": Plus 1", 
+									 "$" + getCost(1) + ": Auto Clicker", 
+									 "Shop Item 3", 
+									 "Shop Item 4", 
+									 "Shop Item 5" };
+			String[] optionFlavorTexts = { "Item Description 1", 
+											"Item Description 2", 
+											"Item Description 3", 
+											"Item Description 4", 
+											"Item Description 5" };
 			
 			JList optionList = new JList<>(shopOptions);
 			optionList.setBorder(new LineBorder(Color.DARK_GRAY));
@@ -159,10 +175,23 @@ public class Shop {
 			buyButton.addActionListener(new ActionListener()
 			{
 				public void actionPerformed(ActionEvent e)
-				{
-					//code to buy item
-					String s = String.valueOf("Buy: " + shopBox.getSelectedItem());
-					JOptionPane.showMessageDialog(null, s);
+				{	
+					if(player.getMoney() < getCost(shopBox.getSelectedIndex())) {
+						
+						JOptionPane.showMessageDialog(null, "Not Enough Money");
+						
+					}
+					
+					else {
+						
+						purchase(shopBox.getSelectedIndex());
+						//code to buy item
+						String s = String.valueOf("Buy: " + shopBox.getSelectedItem());
+						
+						JOptionPane.showMessageDialog(null, s);
+						
+					}
+
 				}
 			});
 
