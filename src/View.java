@@ -1,8 +1,6 @@
 import javax.swing.*;
 import javax.swing.border.LineBorder;
 
-import javafx.scene.control.Tooltip;
-
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -199,7 +197,17 @@ public class View extends JFrame implements ActionListener {
         {
             public void actionPerformed(ActionEvent e)
             {
-                c.player.updateWorkHours(1);
+                Sounds.playSound("coin.wav");
+                //c.player.updateWorkHours(1);
+                //counterLabel.setText("Work Hours: " + c.player.getWorkHours());
+                //Code above works
+                //Code below is new/mine
+                if(PowerUp.powerUp1activated) {
+                    c.player.updateWorkHours(2); //Powerup activated = double pay.
+                }
+                else
+                    c.player.updateWorkHours(1); //No powerup = regular pay.
+                
                 counterLabel.setText("Work Hours: " + c.player.getWorkHours());
             }
         });
@@ -262,6 +270,7 @@ public class View extends JFrame implements ActionListener {
         {
           public void actionPerformed(ActionEvent e)
           {
+            Sounds.playSound("job.wav");
             c.clientList.clientMenu();
             // Add code to open jobs page
           }
@@ -272,8 +281,9 @@ public class View extends JFrame implements ActionListener {
         {
           public void actionPerformed(ActionEvent e)
           {
-            c.powerUp.powerUpMenu();
-            // Add code to open power ups page
+              Sounds.playSound("powerup.wav");
+              c.powerUp.powerUpMenu();
+              //Add code to open power ups page
           }
         });
 
@@ -282,6 +292,7 @@ public class View extends JFrame implements ActionListener {
         {
           public void actionPerformed(ActionEvent e)
           {
+            Sounds.playSound("coin.wav");
             c.shop.shopMenu();
 
             /*
@@ -305,6 +316,7 @@ public class View extends JFrame implements ActionListener {
         {
           public void actionPerformed(ActionEvent e)
           {
+            Sounds.playSound("pause.wav");
             c.stats.statsMenu();
             // Add code to open stats page
           }
@@ -317,6 +329,7 @@ public class View extends JFrame implements ActionListener {
         setVisible(true);
 
     }
+
 
     public void actionPerformed(ActionEvent e) { repaint(); }
 }
