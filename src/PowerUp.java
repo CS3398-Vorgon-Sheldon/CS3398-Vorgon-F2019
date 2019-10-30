@@ -14,6 +14,8 @@ import java.awt.event.ActionListener;
 public class PowerUp {
 
 	Player player;
+	static boolean powerUp1activated;
+	static boolean powerUp2activated;
 	
 	final int WINDOW_WIDTH = 800; // Window width in pixels
 	final int WINDOW_HEIGHT = 600; // Window height in pixels
@@ -48,8 +50,8 @@ public class PowerUp {
 		rightPanel.setBackground(Color.white);
 		
 		// Power ups Options
-		String[] powerUpOptions = { "Power Up 1", "Power Up 2", "Power Up 3", "Power Up 4", "Power Up 5" };
-		String[] optionFlavorTexts = { "Description of ability 1", "Description of ability 2", "Description of ability 3", "Description of ability 4", "Description of ability 5" };
+		String[] powerUpOptions = { "Double Pay", "Auto Clicker"/*, "Power Up 3", "Power Up 4", "Power Up 5"*/ };
+		String[] optionFlavorTexts = { "Hours worked X 2", "Game auto clicks for user",/* "Description of ability 3", "Description of ability 4", "Description of ability 5" */};
 
 		JList optionList = new JList<>(powerUpOptions);
 		optionList.setBorder(new LineBorder(Color.DARK_GRAY));
@@ -119,6 +121,18 @@ public class PowerUp {
 				//code to activate power up
 				String s = String.valueOf("Activate: " + powerUpBox.getSelectedItem());
 				JOptionPane.showMessageDialog(null, s);
+
+				if (powerUpBox.getSelectedIndex() == 0) {
+
+					powerUp1activated = true;
+					powerUp1Timer();
+				}
+				if (powerUpBox.getSelectedIndex() == 1) {
+
+					powerUp2activated = true;
+					powerUp2Timer();
+					autoClicker();
+				}
 			}
 	    });
 
@@ -168,5 +182,52 @@ public class PowerUp {
 		powerUpFrame.setVisible(true);
 		
 	}
+
+	/*****************************************
+	 * 										 *
+	 * THE METHODS BELOW ARE FOR POWER-UPS.   *
+	 *										 *
+	 ****************************************/
+
+	//Timer for how long Power-up 1 will last.
+	public void powerUp1Timer() {
+		new java.util.Timer().schedule(
+				new java.util.TimerTask() {
+					@Override
+					public void run() {
+						powerUp1activated = false;
+					}
+				},
+				10000
+		);
+	}
+
+	//Timer for how long Power-up 2 will last.
+	public void powerUp2Timer() {
+		new java.util.Timer().schedule(
+				new java.util.TimerTask() {
+					@Override
+					public void run() {
+						powerUp2activated = false;
+					}
+				},
+				5000
+		);
+	}
+
+	//Power-up 2 method for auto clicker.
+	public void autoClicker() {
+
+    	do {
+			Sounds.playSound("coin.wav");
+			if(PowerUp.powerUp1activated) {
+				player.updateWorkHours(2); //Powerup activated = double pay.
+			}
+			else
+				player.updateWorkHours(1); //No powerup = regular pay.
+
+		} while(powerUp2activated);
+	}
+
     
 }
