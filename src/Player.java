@@ -28,6 +28,7 @@ public class Player {
         clickPower = 1;
         level = 1;                                           //level will unlock the powerups you can buy in shop
         power_up_used = 0;
+        name = "Player";
     }
 
 //updates workHours

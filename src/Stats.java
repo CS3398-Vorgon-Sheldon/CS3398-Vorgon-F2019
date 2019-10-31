@@ -183,7 +183,7 @@ public class Stats {
 		leaderboardTextPanel.setLayout(new BoxLayout(leaderboardTextPanel, BoxLayout.PAGE_AXIS));
 		leaderboardTextPanel.setBackground(Color.WHITE);
 				
-		JLabel leaderboardTextLabel = new JLabel("~Leaderboard text~");
+		JLabel leaderboardTextLabel = new JLabel("Ranked by Work Hours");
 		leaderboardTextLabel.setFont(textFont);
 		leaderboardTextPanel.add(leaderboardTextLabel);
 		
