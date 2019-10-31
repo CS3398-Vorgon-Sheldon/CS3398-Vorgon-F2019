@@ -6,7 +6,7 @@ import java.io.IOException;
 import javax.swing.Timer;
 import javax.swing.SwingUtilities;
 
-import static com.game.Sounds.playSound; //Need this to use the sound functions.
+//import static com.game.Sounds.playSound; //Need this to use the sound functions.
 
 public class Controller implements MouseListener {
     Player player;
@@ -16,7 +16,7 @@ public class Controller implements MouseListener {
     PowerUp powerUp;
     Stats stats;
     ClientList clientList;
-
+    Achievements achievements;
 
     Controller() throws IOException, Exception{
         model = new Model();
@@ -26,7 +26,8 @@ public class Controller implements MouseListener {
         powerUp = new PowerUp(player);
         stats = new Stats(player);
         clientList = new ClientList();
-
+        achievements = new Achievements();
+        
         new Timer(10, view).start();
     }
 
