@@ -10,9 +10,10 @@ import java.awt.event.ActionListener;
 public class Stats {
 
 	Player player;
-	Player leaderboard[];
+//	Player leaderboard[];
 	
 	Achievements achievements = new Achievements();
+	Leaderboard board = new Leaderboard(player);
 	
 	final int WINDOW_WIDTH = 800; // Window width in pixels
 	final int WINDOW_HEIGHT = 600; // Window height in pixels
@@ -23,7 +24,7 @@ public class Stats {
         this.player = player;
         
     }
-    
+/*    
     public void leaderboardRank()
     {
     	//setting up dummy players
@@ -50,7 +51,7 @@ public class Stats {
     		}
     	}
     }
-    
+*/    
 	
 	public void statsMenu() {
 		
@@ -145,7 +146,7 @@ public class Stats {
 		leaderboardTextPanel.setLayout(new BoxLayout(leaderboardTextPanel, BoxLayout.PAGE_AXIS));
 		leaderboardTextPanel.setBackground(Color.WHITE);
 				
-		JLabel leaderboardTextLabel = new JLabel("~Leaderboard text~");
+/*		JLabel leaderboardTextLabel = new JLabel("~Leaderboard text~");
 		leaderboardTextLabel.setFont(textFont);
 		leaderboardTextPanel.add(leaderboardTextLabel);
 		
@@ -156,7 +157,7 @@ public class Stats {
 			leaderboardTextLabel.setFont(textFont);
 			leaderboardTextPanel.add(leaderboardTextLabel);
 		}
-		
+*/		
 		// Buttons at the bottom
 		JPanel bottomPanel = new JPanel();
 		bottomPanel.setLayout(new FlowLayout(FlowLayout.CENTER));
@@ -190,7 +191,8 @@ public class Stats {
 		 tabbedPane.addTab("Stats",statsTextPanel);
 		 //tabbedPane.addTab("Achievements",achievementsTextPanel);
 		 tabbedPane.addTab("Achievements",achievements.achDisplay());
-		 tabbedPane.addTab("Leaderboard", leaderboardTextPanel);
+		 //tabbedPane.addTab("Leaderboard", leaderboardTextPanel);
+		 tabbedPane.addTab("Leaderboard", board.createLeaderboard());
 		 
 		/*//Top tabs
 		topPanel.add(statsPanel);
