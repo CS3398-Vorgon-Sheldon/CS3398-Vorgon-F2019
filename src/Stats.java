@@ -12,6 +12,8 @@ public class Stats {
 	Player player;
 	Player leaderboard[];
 	
+	Achievements achievements = new Achievements();
+	
 	final int WINDOW_WIDTH = 800; // Window width in pixels
 	final int WINDOW_HEIGHT = 600; // Window height in pixels
 
@@ -183,7 +185,14 @@ public class Stats {
 		statsFrame.add(centerPanel, BorderLayout.CENTER);
 		statsFrame.add(topPanel, BorderLayout.NORTH);
 		
-		//Top tabs
+		 JTabbedPane tabbedPane = new JTabbedPane(JTabbedPane.TOP);
+		 
+		 tabbedPane.addTab("Stats",statsTextPanel);
+		 //tabbedPane.addTab("Achievements",achievementsTextPanel);
+		 tabbedPane.addTab("Achievements",achievements.achDisplay());
+		 tabbedPane.addTab("Leaderboard", leaderboardTextPanel);
+		 
+		/*//Top tabs
 		topPanel.add(statsPanel);
 		topPanel.add(achievementsPanel);
 		topPanel.add(leaderboardPanel);
@@ -191,8 +200,9 @@ public class Stats {
 		//Text panels
 		centerPanel.add(statsTextPanel);
 		centerPanel.add(achievementsTextPanel);
-		centerPanel.add(leaderboardTextPanel);
+		centerPanel.add(leaderboardTextPanel);*/
 		
+		statsFrame.getContentPane().add(tabbedPane);
 		
 		statsFrame.setLocationRelativeTo(null);
 		
