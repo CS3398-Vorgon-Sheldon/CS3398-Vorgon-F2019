@@ -100,16 +100,16 @@ public class Shop {
 			rightPanel.setBackground(Color.white);
 
 			// Shop Options
-			String[] shopOptions = { "$" + getCost(0) + ": Plus 1", 
-									 "$" + getCost(1) + ": Auto Clicker", 
+			String[] shopOptions = { "$" + getCost(0) + ": Overtime", 
+									 "$" + getCost(1) + ": Auto Clicker"/*, 
 									 "Shop Item 3", 
 									 "Shop Item 4", 
-									 "Shop Item 5" };
-			String[] optionFlavorTexts = { "Item Description 1", 
-											"Item Description 2", 
+									 */ };
+			String[] optionFlavorTexts = { "2 work hours per click", 
+											"Autoclick for user"/*, 
 											"Item Description 3", 
 											"Item Description 4", 
-											"Item Description 5" };
+											"Item Description 5" */};
 			
 			JList optionList = new JList<>(shopOptions);
 			optionList.setBorder(new LineBorder(Color.DARK_GRAY));

@@ -17,8 +17,7 @@ public class Achievements {
 	
 	//private JPanel achievementsPanel;
 	List<String> aList = al.getAchievementsList();
-	
-	
+
 	//get achievements list
 	public int [] workGoal = al.getWhGoals();
 	public int [] jobGoal = al.getJobGoals();
@@ -26,18 +25,27 @@ public class Achievements {
 	public int [] moneyGoal = al.getMoneyGoals();
 	
 	JLabel[] achievementsTextLabel = new JLabel[aList.size()];
+	Font tabFont = new Font("Arial", Font.BOLD, 25);
+	Font textFont = new Font("Arial", Font.BOLD, 12);
+	Border raisedetched = BorderFactory.createEtchedBorder(EtchedBorder.RAISED); 
+	
 	
 	//complete to see if achievements has been completed
-	public void completeAchievements() {
+	public void checkAchievements() {
 		
+			if(player.getWorkHours() > 0) {
+				
+				achievementsTextLabel[0].setForeground(Color.green);
+				achievementsTextLabel[0].repaint();
+				
+			}
 		
 	}//end
+	
+	
+	
 	public JPanel achDisplay() {
-		
-		
-		Font tabFont = new Font("Arial", Font.BOLD, 25);
-		Font textFont = new Font("Arial", Font.BOLD, 12);
-		Border raisedetched = BorderFactory.createEtchedBorder(EtchedBorder.RAISED); 
+		 
 		
 		//Achievements Panel at TOP
 		JPanel achievementsPanel = new JPanel();
@@ -61,15 +69,25 @@ public class Achievements {
         
 		for(int i = 0; i < aList.size(); i++) {
 			
-			achievementsTextLabel[i] = new JLabel(aList.get(i));
+			//achievementsTextLabel[i] = new JLabel(aList.get(i));
+			
+			achievementsTextLabel[i] = new JLabel();
+			achievementsTextLabel[i].setText(aList.get(i).toString());
 			achievementsTextLabel[i].setFont(textFont);
 			achievementsTextLabel[i].setBorder(compound);
 			achievementsTextLabel[i].setOpaque(true);
 			achievementsTextLabel[i].setBackground(Color.WHITE);
 			achievementsTextLabel[i].setForeground(Color.RED);
+			
+			checkAchievements();
+			
 			achievementsTextPanel.add(achievementsTextLabel[i]);
 			
+			
+			
 		}//end for loop
+		
+		//completeAchievements();
 		
 		return achievementsTextPanel;
 		

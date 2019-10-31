@@ -17,7 +17,8 @@ public class View extends JFrame implements ActionListener {
     private ImageIcon powerUpIcon = new ImageIcon(getClass().getResource("powerup.jpg"));
     private ImageIcon statsIcon = new ImageIcon(getClass().getResource("stats.png"));
     private ImageIcon kbImage = new ImageIcon(getClass().getClassLoader().getResource("keyboard.png"));
-
+ 
+    
     JLabel workLabel = new JLabel("Hours worked: " + String.valueOf(workHours));
     JLabel moneyLabel = new JLabel("Dollars: $" + String.valueOf(money));
     JLabel levelLabel = new JLabel("Current level: " + String.valueOf(level));
@@ -294,7 +295,7 @@ public class View extends JFrame implements ActionListener {
           {
             Sounds.playSound("coin.wav");
             c.shop.shopMenu();
-
+            
             /*
             //if user's wallet is less than cost. They cannot purchase
         	if(c.player.getMoney() < c.shop.getCost(shopBox.getSelectedIndex())) {
@@ -318,6 +319,7 @@ public class View extends JFrame implements ActionListener {
           {
             Sounds.playSound("pause.wav");
             c.stats.statsMenu();
+           
             // Add code to open stats page
           }
         });

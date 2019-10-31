@@ -1,23 +1,41 @@
 import javax.swing.*;
 import javax.swing.border.Border;
+import javax.swing.border.CompoundBorder;
+import javax.swing.border.EmptyBorder;
 import javax.swing.border.EtchedBorder;
 import javax.swing.border.LineBorder;
+import javax.swing.event.ChangeEvent;
+
+import javax.swing.event.ChangeListener;
 
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.List;
 
 public class Stats {
 
 	Player player;
 	Player leaderboard[];
 	
-	Achievements achievements = new Achievements();
+	AchievementsList al = new AchievementsList();
+	//Achievements achievements = new Achievements();
+	
 	
 	final int WINDOW_WIDTH = 800; // Window width in pixels
 	final int WINDOW_HEIGHT = 600; // Window height in pixels
 
-    
+	
+	//private JPanel achievementsPanel;
+	List<String> aList = al.getAchievementsList();
+
+	//get achievements list
+	public int [] workGoal = al.getWhGoals();
+	public int [] jobGoal = al.getJobGoals();
+	public int [] clientGoal = al.getClientsGoals();
+	public int [] moneyGoal = al.getMoneyGoals();
+	
+	JLabel[] achievementsTextLabel = new JLabel[aList.size()];
     public Stats(Player player){
     
         this.player = player;
@@ -64,8 +82,13 @@ public class Stats {
 		
 		Font tabFont = new Font("Arial", Font.BOLD, 25);
 		Font textFont = new Font("Arial", Font.BOLD, 18);
+		Font achFont = new Font("Arial", Font.BOLD, 12);
 		Border raisedetched = BorderFactory.createEtchedBorder(EtchedBorder.RAISED); 
 		
+		EmptyBorder border = new EmptyBorder(5, 5, 5, 5);
+        LineBorder line = new LineBorder(Color.white, 2, true);
+        CompoundBorder compound = new CompoundBorder(line, border);
+        
 	//~~~Tabs and respective text Panels~~~
 		
 		JPanel topPanel = new JPanel();
@@ -88,17 +111,33 @@ public class Stats {
 		
 		JLabel statsTextLabel = new JLabel("Level: " + player.getLevel());
 		statsTextLabel.setFont(textFont);
+		statsTextLabel.setBorder(compound);
 		statsTextPanel.add(statsTextLabel);
 		statsTextLabel = new JLabel("Total Clicks: ");
 		statsTextLabel.setFont(textFont);
+		statsTextLabel.setBorder(compound);
 		statsTextPanel.add(statsTextLabel);
 		statsTextLabel = new JLabel("Total Hours: " + player.getWorkHours());
 		statsTextLabel.setFont(textFont);
+		statsTextLabel.setBorder(compound);
 		statsTextPanel.add(statsTextLabel);
 		statsTextLabel = new JLabel("Total Money: " + player.getMoney());
 		statsTextLabel.setFont(textFont);
+		statsTextLabel.setBorder(compound);
 		statsTextPanel.add(statsTextLabel);
-		
+		statsTextLabel = new JLabel("Total Clients: ");
+		statsTextLabel.setBorder(compound);
+		statsTextLabel.setFont(textFont);
+		statsTextPanel.add(statsTextLabel);
+		statsTextLabel = new JLabel("Jobs Completed: ");
+		statsTextLabel.setFont(textFont);
+		statsTextLabel.setBorder(compound);
+		statsTextPanel.add(statsTextLabel);
+		statsTextLabel = new JLabel("Power Ups Used: " + player.get_PWR_use());
+		statsTextLabel.setFont(textFont);
+		statsTextLabel.setBorder(compound);
+		statsTextPanel.add(statsTextLabel);
+
 		//Achievements Panel at TOP
 		JPanel achievementsPanel = new JPanel();
 		achievementsPanel.setLayout(new FlowLayout(FlowLayout.CENTER));
@@ -108,29 +147,28 @@ public class Stats {
 		
 		//text for Achievements tab
 		JPanel achievementsTextPanel = new JPanel();
+		//EmptyBorder panelBorder = new EmptyBorder(10, 20, 20, 20);
+		
+		//achievementsTextPanel.setBorder(panelBorder);
 		achievementsTextPanel.setLayout(new BoxLayout(achievementsTextPanel, BoxLayout.PAGE_AXIS));
 		achievementsTextPanel.setBackground(Color.WHITE);
+        
+		for(int i = 0; i < aList.size(); i++) {
+			
+			//achievementsTextLabel[i] = new JLabel(aList.get(i));
+			
+			achievementsTextLabel[i] = new JLabel();
+			achievementsTextLabel[i].setText(aList.get(i).toString());
+			achievementsTextLabel[i].setFont(achFont);
+			achievementsTextLabel[i].setBorder(compound);
+			achievementsTextLabel[i].setOpaque(true);
+			achievementsTextLabel[i].setBackground(Color.WHITE);
+			achievementsTextLabel[i].setForeground(Color.RED);
+			
 		
-		JLabel achievementsTextLabel = new JLabel("Achievement 1");
-		achievementsTextLabel.setBorder(raisedetched);
-		achievementsTextLabel.setFont(tabFont);
-		achievementsTextLabel.setOpaque(true);
-		achievementsTextLabel.setBackground(Color.GREEN);
-		achievementsTextPanel.add(achievementsTextLabel);
-		
-		achievementsTextLabel = new JLabel("Achievement 2");
-		achievementsTextLabel.setBorder(raisedetched);
-		achievementsTextLabel.setFont(tabFont);
-		achievementsTextLabel.setOpaque(true);
-		achievementsTextLabel.setBackground(Color.GREEN);
-		achievementsTextPanel.add(achievementsTextLabel);
-		
-		achievementsTextLabel = new JLabel("Achievement 3");
-		achievementsTextLabel.setBorder(raisedetched);
-		achievementsTextLabel.setFont(tabFont);
-		achievementsTextLabel.setOpaque(true);
-		achievementsTextLabel.setBackground(Color.LIGHT_GRAY);
-		achievementsTextPanel.add(achievementsTextLabel);
+			
+			achievementsTextPanel.add(achievementsTextLabel[i]);
+		}//end for
 		
 		//LeaderBoard Panel at TOP
 		JPanel leaderboardPanel = new JPanel();
@@ -185,13 +223,27 @@ public class Stats {
 		statsFrame.add(centerPanel, BorderLayout.CENTER);
 		statsFrame.add(topPanel, BorderLayout.NORTH);
 		
-		 JTabbedPane tabbedPane = new JTabbedPane(JTabbedPane.TOP);
+		
+		 JTabbedPane tabbedPane = new JTabbedPane(/*JTabbedPane.TOP*/);
 		 
 		 tabbedPane.addTab("Stats",statsTextPanel);
-		 //tabbedPane.addTab("Achievements",achievementsTextPanel);
-		 tabbedPane.addTab("Achievements",achievements.achDisplay());
+		 tabbedPane.addTab("Achievements",achievementsTextPanel);
+		 //tabbedPane.addTab("Achievements",achievements.achDisplay());
 		 tabbedPane.addTab("Leaderboard", leaderboardTextPanel);
 		 
+		 tabbedPane.addChangeListener(new ChangeListener() {
+			 
+			 public void stateChanged(ChangeEvent ce) {
+				 
+				 //achievements.checkAchievements();
+				 updateAchievements();
+				 System.out.println("\nAchievement Tab: " + player.getWorkHours());
+				 
+			 }
+
+		 });
+
+			
 		/*//Top tabs
 		topPanel.add(statsPanel);
 		topPanel.add(achievementsPanel);
@@ -209,5 +261,40 @@ public class Stats {
 		statsFrame.setVisible(true);
 		
 	}
+	
+	public void updateAchievements() {
+		
+		 int counter = 0;
+		 
+		 for(int i = 0; i < workGoal.length; i++) {
+			 
+			 if(player.getWorkHours() >= workGoal[i]) {
+				 
+					achievementsTextLabel[counter].setForeground(Color.green);
+					achievementsTextLabel[counter].repaint();
+				 
+				 
+			 }//end if
+			 
+			 counter++;
+			 
+		 }//end work for
+		 		
+		 counter = 11;
+		 
+		 for(int i = 0; i < moneyGoal.length; i++) {
+			 
+			 if(player.getMoney() >= moneyGoal[i]) {
+				 
+				achievementsTextLabel[counter].setForeground(Color.green);
+				achievementsTextLabel[counter].repaint();
+			 }
+			 
+			 counter++;
+		 }
+		 
+		 
+	}//end update achievements
+	
     
 }
