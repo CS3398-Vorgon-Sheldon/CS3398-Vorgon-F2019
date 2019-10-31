@@ -262,6 +262,7 @@ public class Stats {
 		
 	}
 	
+	//check and update if player finished achievements
 	public void updateAchievements() {
 		
 		 int counter = 0;
