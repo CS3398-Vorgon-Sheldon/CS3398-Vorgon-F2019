@@ -75,6 +75,7 @@ Sprint 1:
  * See Research/PlayerProgressionResearch.txt
 * Implementation of visual representation of Level status into top panel of Game HUD.
 * Implemented Images for GUI by resizing and positioning within each appropriate panel of GUI.
+
 Sprint 2:
 * Created the base structure and GUI design for the stats page. This page has three sections to it for the user to flip thorugh such as stats, achievements, and leaderboard. This was implemented in the "Updates to stats page ui" commit in github.
 * Creted and implemented a fuctioning leaderboard to the stats page. This is used to an arcade style ranking to the players in the application. This is seen in the "Leaderboard Added to Stats Page" commit in github.
