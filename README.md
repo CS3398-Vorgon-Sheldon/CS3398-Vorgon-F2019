@@ -32,6 +32,7 @@ Sprint 1:
     Served as a base to let the team spread out and add their sections.
 * Theme Integration from research; See Research/Theme Research.txt
 * Added 2nd currency and named both existing ones accordingly adding functions for both and integrated them into the GUI.
+
 Sprint 2:
 * Created the Client class which will function as a way for the player to spend currency 1, "time" and acquire currency 2 "money"
     * Code can be seen in src/Client.java
@@ -75,14 +76,14 @@ Sprint 2:
 * Stats implementation. Player can keep up with their stats; Code is found in the src folder as Stats.java
 * Achievements implementation. Player can view their progress by completing achievements. Code is found is the src folder as Achievements.java
 * Achievements list implementation. Create achievements list for the player to complete. Code is found is the src folder as AchievementsList.java 
-* Feature: Get the achievements to update whenever the player completes it. it changes from red text to green text when achievement is completed.
+* Feature: Get the achievements to update whenever the player completes it. It changes from red text to green text when achievement is completed.
 
 #### Sergio
 Sprint 1:
 * Level calculation. Fuction calculates players level and updates continuously as player clicks.
  * See Research/PlayerProgressionResearch.txt
 * Implementation of visual representation of Level status into top panel of Game HUD.
-* Implemented Images for GUI by resizing and positioning within each appropriate panel of GUI.
+* Implemented Images for GUI by resizing and positioning within each appropriate panel of GUI. 
 
 Sprint 2:
 * Created the base structure and GUI design for the stats page. This page has three sections to it for the user to flip thorugh such as stats, achievements, and leaderboard. This was implemented in the "Updates to stats page ui" commit in github.
@@ -91,7 +92,7 @@ Sprint 2:
 ## Status
 We have built up upon our game's foundation. We have reimagined the user interface, and updated icons, sounds, and other elements when doing so. Improvements are to be made by polishing the features we have now, Updating GUI with the purchases, powerups, and jobs. 
 
-* Miguel - Next step would be to implement random objects that could give help or hurt the player.
+* Miguel - Next step would be to implement random objects that could help or hurt the player.
 
 * Hugo - Redoing the "Client" Classes to function properly as it serves a key feature of the primary core loop.
 
