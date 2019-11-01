@@ -63,11 +63,19 @@ Sprint 2:
     * Code is located in the files src/View.java, src/Shop.java, src/PowerUp.java, and src/ClientList.java.
 
 #### Miguel
+
+Sprint 1:
 * Shop implementation. Player can use the shop to buy upgrades with the money they have earned in game.
   * Code is found in the src folder as shop.java.
 * In game achievements that we could add; See Research/game_achievements.txt.
 * Statistics that we can keep track of and provide; See Research/statistics_research.txt.
 * Time base objects that could reward or hurt the player; See Research/tbo_research.txt.
+
+Sprint 2:
+* Stats implementation. Player can keep up with their stats; Code is found in the src folder as Stats.java
+* Achievements implementation. Player can view their progress by completing achievements. Code is found is the src folder as Achievements.java
+* Achievements list implementation. Create achievements list for the player to complete. Code is found is the src folder as AchievementsList.java 
+* Feature: Get the achievements to update whenever the player completes it. it changes from red text to green text when achievement is completed.
 
 #### Sergio
 * Level calculation. Fuction calculates players level and updates continuously as player clicks.
@@ -79,7 +87,7 @@ Sprint 2:
 ## Status
 We have built up upon our game's foundation. We have reimagined the user interface, and updated icons, sounds, and other elements when doing so. Improvements are to be made by polishing the features we have now, Updating GUI with the purchases, powerups, and jobs. 
 
-* Miguel - Next step would be to implement the statistics and maybe get started on the in game achievements.
+* Miguel - Next step would be to implement random objects that could give help or hurt the player.
 
 * Hugo - Redoing the "Client" Classes to function properly as it serves a key feature of the primary core loop.
 
