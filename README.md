@@ -78,11 +78,15 @@ Sprint 2:
 * Feature: Get the achievements to update whenever the player completes it. it changes from red text to green text when achievement is completed.
 
 #### Sergio
+Sprint 1:
 * Level calculation. Fuction calculates players level and updates continuously as player clicks.
  * See Research/PlayerProgressionResearch.txt
 * Implementation of visual representation of Level status into top panel of Game HUD.
-* Found royalty free image libraries to use for game visualization within the GUI.
 * Implemented Images for GUI by resizing and positioning within each appropriate panel of GUI.
+
+Sprint 2:
+* Created the base structure and GUI design for the stats page. This page has three sections to it for the user to flip thorugh such as stats, achievements, and leaderboard. This was implemented in the "Updates to stats page ui" commit in github.
+* Creted and implemented a fuctioning leaderboard to the stats page. This is used to an arcade style ranking to the players in the application. This is seen in the "Leaderboard Added to Stats Page" commit in github.
 
 ## Status
 We have built up upon our game's foundation. We have reimagined the user interface, and updated icons, sounds, and other elements when doing so. Improvements are to be made by polishing the features we have now, Updating GUI with the purchases, powerups, and jobs. 
@@ -96,4 +100,4 @@ further add on to game funtions such as power ups/achievements.
 
 * Nigel - Next step would be to implement a wider genre of sounds for the current and future buttons. I will also be implementing a method that will boost possible points earned for a limited amount of time.
 
-* Sergio - Next step would for level progression to be used in utilites like items, shop, etc. and let player increase it.
+* Sergio - Next step would to add save/load file functionality so that players can continue their games after closing the application.
