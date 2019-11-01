@@ -26,23 +26,34 @@ List of features ready and TODOs for future development
 
 
 ## Student entries
-Hugo
+#### Hugo
+Sprint 1:
 * Initial implementation of core mechanic with Swing GUI (Click Mouse, increase counter, update screen). Commit seen 9/29/2019 Titled "Base Implementation".
     Served as a base to let the team spread out and add their sections.
 * Theme Integration from research; See Research/Theme Research.txt
 * Added 2nd currency and named both existing ones accordingly adding functions for both and integrated them into the GUI.
+Sprint 2:
+* Created the Client class which will function as a way for the player to spend currency 1, "time" and acquire currency 2 "money"
+    * Code can be seen in src/Client.java
+* Created the ClientList Class which is created in the controller which holds an array of the pre-created Clients. and methods on pointing to them.
+    * Code can be seen in src/ClientList.java
+* Created a list that will load all the clients. Has issues actually reading from the file.
+    * List can be seen in src/clientList.txt
+* Have a list on how to implement the save/load function but it cannot be integrated as of yet.
 
-Nigel
+#### Nigel
 * Application background music and button sound effects
 * Sound.java artifact is in the src folder. The artifact is used to implement the background music for the application. The artifact is also used to implement sound effects for several buttons.
 * My method is called first inside of main.
 
-Joey
+#### Joey
+
 Sprint 1:
 * Research for the game's UX; See Research/ux_research.txt. Information to be used to structure GUI and navigation.
 * Create GUI - Created initial GUI based on our game features/modifiers such as jobs, power ups, and the shop.
     * Code is located in the src/View.java file.
 * Research leaderboard implementation; See Research/leaderboard_research.txt. Information to be used to implement leaderboard based off of user statistics.
+
 Sprint 2:
 * Streamline the GUI - The user interface has been completely overhauled and is now less cluttered and more organized.
     * Code is located in the src/View.java file.
@@ -51,14 +62,14 @@ Sprint 2:
 * Add listeners to graphical pages - make the interface elements react to interactions.
     * Code is located in the files src/View.java, src/Shop.java, src/PowerUp.java, and src/ClientList.java.
 
-Miguel
+#### Miguel
 * Shop implementation. Player can use the shop to buy upgrades with the money they have earned in game.
   * Code is found in the src folder as shop.java.
 * In game achievements that we could add; See Research/game_achievements.txt.
 * Statistics that we can keep track of and provide; See Research/statistics_research.txt.
 * Time base objects that could reward or hurt the player; See Research/tbo_research.txt.
 
-Sergio
+#### Sergio
 * Level calculation. Fuction calculates players level and updates continuously as player clicks.
  * See Research/PlayerProgressionResearch.txt
 * Implementation of visual representation of Level status into top panel of Game HUD.
@@ -66,15 +77,15 @@ Sergio
 * Implemented Images for GUI by resizing and positioning within each appropriate panel of GUI.
 
 ## Status
-We have built up upon our game's foundation. We have reimagined the user interface, and updated icons, sounds, and other elements when doing so. Improvements are to be made by adding on to options, modifiers, and jobs.
+We have built up upon our game's foundation. We have reimagined the user interface, and updated icons, sounds, and other elements when doing so. Improvements are to be made by polishing the features we have now, Updating GUI with the purchases, powerups, and jobs. 
 
 * Miguel - Next step would be to implement the statistics and maybe get started on the in game achievements.
 
-* Hugo - Next step would be to implement a reset button and add an "Opening Menu" to the GUI.
+* Hugo - Redoing the "Client" Classes to function properly as it serves a key feature of the primary core loop.
 
-* Joey - Next step would be to provide needed information for the user through the UI, and 
+* Joey - Next step would be to provide needed information for the user through the UI, and
 further add on to game funtions such as power ups/achievements.
 
-* Nigel - Next step would be to implement a wider genre of sounds for the current and future buttons. I will also be implementing a method that will boost possible points earned for a limited amount of time. 
+* Nigel - Next step would be to implement a wider genre of sounds for the current and future buttons. I will also be implementing a method that will boost possible points earned for a limited amount of time.
 
 * Sergio - Next step would for level progression to be used in utilites like items, shop, etc. and let player increase it.
