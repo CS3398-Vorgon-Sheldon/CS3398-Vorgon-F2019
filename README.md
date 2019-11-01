@@ -38,10 +38,18 @@ Nigel
 * My method is called first inside of main.
 
 Joey
+Sprint 1:
 * Research for the game's UX; See Research/ux_research.txt. Information to be used to structure GUI and navigation.
 * Create GUI - Created initial GUI based on our game features/modifiers such as jobs, power ups, and the shop.
     * Code is located in the src/View.java file.
 * Research leaderboard implementation; See Research/leaderboard_research.txt. Information to be used to implement leaderboard based off of user statistics.
+Sprint 2:
+* Streamline the GUI - The user interface has been completely overhauled and is now less cluttered and more organized.
+    * Code is located in the src/View.java file.
+* Add interface elements to the shop, power ups, and jobs/clients pages.
+    * Code is located in the files src/Shop.java, src/PowerUp.java, and src/ClientList.java respectively.
+* Add listeners to graphical pages - make the interface elements react to interactions.
+    * Code is located in the files src/View.java, src/Shop.java, src/PowerUp.java, and src/ClientList.java.
 
 Miguel
 * Shop implementation. Player can use the shop to buy upgrades with the money they have earned in game.
@@ -58,13 +66,14 @@ Sergio
 * Implemented Images for GUI by resizing and positioning within each appropriate panel of GUI.
 
 ## Status
-The foundation of the game is in existence. One part that just needs to be merged. Next step is to build up on our foundation. With the existing features, add on to the number of options the player is given in terms of upgrades, and clients. Updating icons, sounds, and the GUI along the way.
+We have built up upon our game's foundation. We have reimagined the user interface, and updated icons, sounds, and other elements when doing so. Improvements are to be made by adding on to options, modifiers, and jobs.
 
 * Miguel - Next step would be to implement the statistics and maybe get started on the in game achievements.
 
 * Hugo - Next step would be to implement a reset button and add an "Opening Menu" to the GUI.
 
-* Joey - Next step would be to further improve and add to the GUI and implement the leaderboard.
+* Joey - Next step would be to provide needed information for the user through the UI, and 
+further add on to game funtions such as power ups/achievements.
 
 * Nigel - Next step would be to implement a wider genre of sounds for the current and future buttons. I will also be implementing a method that will boost possible points earned for a limited amount of time. 
 
