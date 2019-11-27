@@ -4,6 +4,9 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.io.IOException;
 import javax.swing.Timer;
+
+import javafx.scene.Cursor;
+
 import javax.swing.SwingUtilities;
 
 //import static com.game.Sounds.playSound; //Need this to use the sound functions.
@@ -22,7 +25,7 @@ public class Controller implements MouseListener {
         model = new Model();
         player = new Player();
         view = new View(this);
-        shop = new Shop(player);
+        shop = new Shop(player, view);
         powerUp = new PowerUp(player);
         stats = new Stats(player);
         clientList = new ClientList();

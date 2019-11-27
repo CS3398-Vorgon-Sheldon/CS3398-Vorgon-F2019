@@ -1,6 +1,8 @@
 import javax.swing.*;
 import javax.swing.border.LineBorder;
 
+import javafx.scene.Cursor;
+
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -38,6 +40,9 @@ public class View extends JFrame implements ActionListener {
     //String jobOptions[] = { "Job 1", "Job 2", "Job 3" };
     //String powerOptions[] = { "Power up 1", "Power up 2", "Power up 3" };
     //String shopOptions[] = { "Plus 1: $20", "Auto Clicks: $50", "Employee Upgrade: $100" };
+
+    JPanel kbPanel = new JPanel();
+    JButton kbButton = new JButton();
 
     final int WINDOW_WIDTH = 800; // Window width in pixels
     final int WINDOW_HEIGHT = 600; // Window height in pixels
@@ -181,13 +186,13 @@ public class View extends JFrame implements ActionListener {
 
         getContentPane().setBackground(Color.white);
 
-        JPanel kbPanel = new JPanel();
+        //JPanel kbPanel = new JPanel();
         kbPanel.setLayout(new FlowLayout(FlowLayout.CENTER));
         kbPanel.setBounds(300, 175, 210, 92);
         kbPanel.setBackground(Color.white);
         add(kbPanel, BorderLayout.CENTER);
 
-        JButton kbButton = new JButton();
+        //JButton kbButton = new JButton();
         kbButton.setBackground(Color.white);
         kbButton.setFocusPainted(false);
         kbButton.setBorder(null);
