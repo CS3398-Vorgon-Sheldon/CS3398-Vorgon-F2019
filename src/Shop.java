@@ -31,8 +31,9 @@ public class Shop {
 	boolean title_modifier_bought;
 	boolean work_desk_modifier_bought;
 	
-    private ImageIcon workDeskIcon = new ImageIcon(getClass().getResource("workdesk.jpg"));
-
+	private ImageIcon workDeskIcon = new ImageIcon(getClass().getResource("workdesk.jpg"));
+	
+	JLabel moneyLabel = new JLabel();
 
     public Shop(Player player, View view){
 
@@ -165,6 +166,10 @@ public class Shop {
 			gbc.fill = GridBagConstraints.NONE;
 			leftPanel.add(flavorTextPane, gbc);
 
+			moneyLabel.setText("Current Funds: $" + player.getMoney());
+			moneyLabel.setForeground(new Color(133, 187, 101)); //green
+			moneyLabel.setFont(new Font("Arial", Font.PLAIN, 20));
+
 			JComboBox shopBox = new JComboBox<>(shopOptions);
 			shopBox.setBackground(Color.white);
 			shopBox.setBorder(new LineBorder(Color.DARK_GRAY));
@@ -215,6 +220,7 @@ public class Shop {
 					else {
 						
 						purchase(shopBox.getSelectedIndex());
+						moneyLabel.setText("Current Funds: $" + player.getMoney());
 						//code to buy item
 						String s = String.valueOf("Buy: " + shopBox.getSelectedItem());
 						
@@ -225,6 +231,9 @@ public class Shop {
 				}
 			});
 
+			gbc.fill = GridBagConstraints.NONE;
+			rightPanel.add(moneyLabel, gbc);
+			rightPanel.add(Box.createRigidArea(new Dimension(50, 15)), gbc);
 			gbc.fill = GridBagConstraints.HORIZONTAL;
 			rightPanel.add(shopBox, gbc);
 			rightPanel.add(Box.createRigidArea(new Dimension(50, 15)), gbc);
