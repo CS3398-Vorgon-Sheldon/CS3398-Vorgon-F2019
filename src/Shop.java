@@ -168,7 +168,7 @@ public class Shop {
 
 			moneyLabel.setText("Current Funds: $" + player.getMoney());
 			moneyLabel.setForeground(new Color(133, 187, 101)); //green
-			moneyLabel.setFont(new Font("Arial", Font.PLAIN, 20));
+			moneyLabel.setFont(new Font("Arial", Font.BOLD, 20));
 
 			JComboBox shopBox = new JComboBox<>(shopOptions);
 			shopBox.setBackground(Color.white);
