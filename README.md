@@ -63,6 +63,14 @@ Sprint 2:
 * Add listeners to graphical pages - make the interface elements react to interactions.
     * Code is located in the files src/View.java, src/Shop.java, src/PowerUp.java, and src/ClientList.java.
 
+Sprint 3:
+* Add new items to the shop - 'Cosmetic' modifiers that do not alter gameplay have been added to the shop.
+    * Code is located in the Shop.java file.
+* Statiscical information visibility - Information such as money available is visible where needed.
+    * Code is located in the Shop.java file.
+* Refactor code - Code has been refactored and cleaned up. The navigation button properties have been refactored.
+    * Code is located in the View.java file.
+
 #### Miguel
 
 Sprint 1:
@@ -90,14 +98,13 @@ Sprint 2:
 * Creted and implemented a fuctioning leaderboard to the stats page. This is used to an arcade style ranking to the players in the application. This is seen in the "Leaderboard Added to Stats Page" commit in github.
 
 ## Status
-We have built up upon our game's foundation. We have reimagined the user interface, and updated icons, sounds, and other elements when doing so. Improvements are to be made by polishing the features we have now, Updating GUI with the purchases, powerups, and jobs. 
+Polish has been added to our game's code and foundation. More features have been added on to improve the game. Improvements are to be made by ironing out any issues that arise and to continue adding new content.
 
 * Miguel - Next step would be to implement random objects that could help or hurt the player.
 
 * Hugo - Redoing the "Client" Classes to function properly as it serves a key feature of the primary core loop.
 
-* Joey - Next step would be to provide needed information for the user through the UI, and
-further add on to game funtions such as power ups/achievements.
+* Joey - Next step would be to add more content, such as more shop items and rewards. Also to iron out any issues to make a smoother user experience.
 
 * Nigel - Next step would be to implement a wider genre of sounds for the current and future buttons. I will also be implementing a method that will boost possible points earned for a limited amount of time.
 
