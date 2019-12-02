@@ -43,9 +43,26 @@ Sprint 2:
 * Have a list on how to implement the save/load function but it cannot be integrated as of yet.
 
 #### Nigel
-* Application background music and button sound effects
-* Sound.java artifact is in the src folder. The artifact is used to implement the background music for the application. The artifact is also used to implement sound effects for several buttons.
-* My method is called first inside of main.
+Sprint 1:
+* Implement application background music. 
+    * Code is located in the src/Sounds.java file.
+* Research Powerups - Discover fun powerups to add to our application. 
+
+
+Sprint 2:
+* Create Powerups - Powerups have been created to enhance the game's fun.
+    * Code is located in the src/Powerup.java file.
+* Created button sound effects.
+    * Code is located in the files src/Sounds.java
+
+
+Sprint 3:
+* Add new Powerup to the shop.
+    * Code is located in the Powerup.java file.
+* Add Powerup timer - Timer displays how much time is left to use activated powerup.
+    * Code is located in the Powerup.java file.
+* Refactor code - Code has been refactored and cleaned up.
+    * Code is located in the Powerup.java & Sounds.java files.
 
 #### Joey
 
