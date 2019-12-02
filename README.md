@@ -44,25 +44,25 @@ Sprint 2:
 
 #### Nigel
 Sprint 1:
-* Implement application background music. 
+* Implement application background music. Music plays in the background through out the game. 
     * Code is located in the src/Sounds.java file.
 * Research Powerups - Discover fun powerups to add to our application. 
 
 
 Sprint 2:
-* Create Powerups - Powerups have been created to enhance the game's fun.
+* Create Powerups - Powerups have been created to enhance the game's fun. Powerups allow the user to earn points faster. 
     * Code is located in the src/Powerup.java file.
-* Created button sound effects.
+* Created button sound effects. Special sound effects are played when certain buttons are pressed. 
     * Code is located in the files src/Sounds.java
 
 
 Sprint 3:
-* Add new Powerup to the shop.
-    * Code is located in the Powerup.java file.
+* Add new Powerup to the shop. Another powerup is added for the user to purchase.
+    * Code is located in the src/Powerup.java file.
 * Add Powerup timer - Timer displays how much time is left to use activated powerup.
-    * Code is located in the Powerup.java file.
+    * Code is located in the src/Powerup.java file.
 * Refactor code - Code has been refactored and cleaned up.
-    * Code is located in the Powerup.java & Sounds.java files.
+    * Code is located in the src/Powerup.java & src/Sounds.java files.
 
 #### Joey
 
