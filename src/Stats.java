@@ -113,7 +113,7 @@ public class Stats {
 		statsTextLabel.setFont(textFont);
 		statsTextLabel.setBorder(compound);
 		statsTextPanel.add(statsTextLabel);
-		statsTextLabel = new JLabel("Total Clicks: ");
+		statsTextLabel = new JLabel("Total Clicks: " + 10);
 		statsTextLabel.setFont(textFont);
 		statsTextLabel.setBorder(compound);
 		statsTextPanel.add(statsTextLabel);
@@ -125,14 +125,14 @@ public class Stats {
 		statsTextLabel.setFont(textFont);
 		statsTextLabel.setBorder(compound);
 		statsTextPanel.add(statsTextLabel);
-		statsTextLabel = new JLabel("Total Clients: ");
+/*		statsTextLabel = new JLabel("Total Clients: ");
 		statsTextLabel.setBorder(compound);
 		statsTextLabel.setFont(textFont);
 		statsTextPanel.add(statsTextLabel);
 		statsTextLabel = new JLabel("Jobs Completed: ");
 		statsTextLabel.setFont(textFont);
 		statsTextLabel.setBorder(compound);
-		statsTextPanel.add(statsTextLabel);
+		statsTextPanel.add(statsTextLabel); */
 		statsTextLabel = new JLabel("Power Ups Used: " + player.get_PWR_use());
 		statsTextLabel.setFont(textFont);
 		statsTextLabel.setBorder(compound);
