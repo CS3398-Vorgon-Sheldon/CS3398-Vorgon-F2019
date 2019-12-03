@@ -7,6 +7,8 @@ import javax.swing.text.SimpleAttributeSet;
 import javax.swing.text.StyleConstants;
 import javax.swing.text.StyledDocument;
 
+import javafx.scene.Cursor;
+
 //import sun.net.www.content.image.jpeg;
 
 import java.awt.*;
@@ -16,20 +18,27 @@ import java.awt.event.ActionListener;
 public class Shop {
 
 	Player player;
+	View view;
 	
 	//menu
-	private int cost[] = new int[]{40, 100, 150};
+	private int cost[] = new int[]{40, 100, 404, 777};
 
 	final int WINDOW_WIDTH = 800; // Window width in pixels
 	final int WINDOW_HEIGHT = 600; // Window height in pixels
 	
 	boolean plus_1_bought;
 	boolean auto_clicker_bought;
+	boolean title_modifier_bought;
+	boolean work_desk_modifier_bought;
+	
+	private ImageIcon workDeskIcon = new ImageIcon(getClass().getResource("workdesk.jpg"));
+	
+	JLabel moneyLabel = new JLabel();
 
+    public Shop(Player player, View view){
 
-    public Shop(Player player){
-
-        this.player = player;
+		this.player = player;
+		this.view = view;
 
     }//end shop
     
@@ -39,7 +48,15 @@ public class Shop {
     
     public boolean confirm_auto_clicker() {
     	return auto_clicker_bought;
-    }//end 
+    }//end
+    
+    public boolean confirm_title_modifier() {
+    	return title_modifier_bought;
+    }
+    
+    public boolean confirm_work_desk_modifier() {
+    	return work_desk_modifier_bought;
+    }
     
     public void purchase(int index) {
 
@@ -51,10 +68,26 @@ public class Shop {
     			 updateCost(index);
     			 break;
     		case 1:
-    			auto_clicker_bought=true;
+    			auto_clicker_bought = true;
     			player.updateMoney(-(getCost(index)));
     			updateCost(index);
-    			break;
+				break;
+			case 2:
+				title_modifier_bought = true;
+				player.updateMoney(-(getCost(index)));
+				updateCost(index);
+				String title = null;
+				do {
+					title = JOptionPane.showInputDialog("Please input your desired game title:");
+				} while (title == null || title.length() == 0);
+				view.setTitle(title);
+				break;
+			case 3:
+				work_desk_modifier_bought = true;
+				player.updateMoney(-(getCost(index)));
+				updateCost(index);
+				view.kbButton.setIcon(workDeskIcon);
+				break;
 
 
     	}//end switch
@@ -100,16 +133,14 @@ public class Shop {
 			rightPanel.setBackground(Color.white);
 
 			// Shop Options
-			String[] shopOptions = { "$" + getCost(0) + ": Plus 1", 
-									 "$" + getCost(1) + ": Auto Clicker", 
-									 "Shop Item 3", 
-									 "Shop Item 4", 
-									 "Shop Item 5" };
-			String[] optionFlavorTexts = { "Item Description 1", 
-											"Item Description 2", 
-											"Item Description 3", 
-											"Item Description 4", 
-											"Item Description 5" };
+			String[] shopOptions = { "$" + getCost(0) + "   : Overtime", 
+									 "$" + getCost(1) + " : Auto Clicker", 
+									 "$" + getCost(2) + " : Rename Game",
+									 "$" + getCost(3) + " : Work Desk Clicker" };
+			String[] optionFlavorTexts = { "2 work hours per click", 
+											"Autoclick for user", 
+											"Rename the game to your liking",
+											"Change the clicker area to a work desk" };
 			
 			JList optionList = new JList<>(shopOptions);
 			optionList.setBorder(new LineBorder(Color.DARK_GRAY));
@@ -134,6 +165,10 @@ public class Shop {
 			leftPanel.add(Box.createRigidArea(new Dimension(50, 15)), gbc);
 			gbc.fill = GridBagConstraints.NONE;
 			leftPanel.add(flavorTextPane, gbc);
+
+			moneyLabel.setText("Current Funds: $" + player.getMoney());
+			moneyLabel.setForeground(new Color(133, 187, 101)); //green
+			moneyLabel.setFont(new Font("Arial", Font.BOLD, 20));
 
 			JComboBox shopBox = new JComboBox<>(shopOptions);
 			shopBox.setBackground(Color.white);
@@ -181,10 +216,11 @@ public class Shop {
 						JOptionPane.showMessageDialog(null, "Not Enough Money");
 						
 					}
-					
+
 					else {
 						
 						purchase(shopBox.getSelectedIndex());
+						moneyLabel.setText("Current Funds: $" + player.getMoney());
 						//code to buy item
 						String s = String.valueOf("Buy: " + shopBox.getSelectedItem());
 						
@@ -195,6 +231,9 @@ public class Shop {
 				}
 			});
 
+			gbc.fill = GridBagConstraints.NONE;
+			rightPanel.add(moneyLabel, gbc);
+			rightPanel.add(Box.createRigidArea(new Dimension(50, 15)), gbc);
 			gbc.fill = GridBagConstraints.HORIZONTAL;
 			rightPanel.add(shopBox, gbc);
 			rightPanel.add(Box.createRigidArea(new Dimension(50, 15)), gbc);

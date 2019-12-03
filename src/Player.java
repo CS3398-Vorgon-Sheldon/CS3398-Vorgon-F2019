@@ -19,6 +19,7 @@ public class Player {
     //private Upgrades upgrades[];
     private boolean debug = true;
     private int clickPower;
+    private int power_up_used;
     Timer timer;
 
     Player(){
@@ -26,6 +27,8 @@ public class Player {
         money = 200; //testing purposes Change this back when clients have been introduced
         clickPower = 1;
         level = 1;                                           //level will unlock the powerups you can buy in shop
+        power_up_used = 0;
+        name = "Player";
     }
 
 //updates workHours
@@ -50,9 +53,19 @@ public class Player {
         System.out.println("Money: " + money);
     }
 
-
-
-
+    public void update_PWR_use() {
+    	
+    	power_up_used++;
+    	
+    }//end update_PWR_use
+    
+    public int get_PWR_use() {
+    	
+    	return power_up_used;
+    	
+    }//end update_PWR_use
+    
+    
 
     public void updateLevel(int hrs) {                    //updates and calculates for next level
     	int xpNeeded = ((level * level) * 50);

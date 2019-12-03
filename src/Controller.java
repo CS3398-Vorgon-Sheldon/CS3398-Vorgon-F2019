@@ -4,9 +4,12 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.io.IOException;
 import javax.swing.Timer;
+
+//import javafx.scene.Cursor;
+
 import javax.swing.SwingUtilities;
 
-import static com.game.Sounds.playSound; //Need this to use the sound functions.
+//import static com.game.Sounds.playSound; //Need this to use the sound functions.
 
 public class Controller implements MouseListener {
     Player player;
@@ -16,17 +19,20 @@ public class Controller implements MouseListener {
     PowerUp powerUp;
     Stats stats;
     ClientList clientList;
-
-
+    Achievements achievements;
+    RNGEvents randomevents;
+    
     Controller() throws IOException, Exception{
         model = new Model();
         player = new Player();
         view = new View(this);
-        shop = new Shop(player);
+        shop = new Shop(player, view);
         powerUp = new PowerUp(player);
         stats = new Stats(player);
         clientList = new ClientList();
-
+        achievements = new Achievements();
+        randomevents = new RNGEvents(player);
+        
         new Timer(10, view).start();
     }
 

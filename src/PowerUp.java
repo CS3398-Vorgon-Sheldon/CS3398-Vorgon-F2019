@@ -50,7 +50,7 @@ public class PowerUp {
 		rightPanel.setBackground(Color.white);
 		
 		// Power ups Options
-		String[] powerUpOptions = { "Double Pay", "Auto Clicker"/*, "Power Up 3", "Power Up 4", "Power Up 5"*/ };
+		String[] powerUpOptions = { "Overtime", "Auto Clicker"/*, "Power Up 3", "Power Up 4", "Power Up 5"*/ };
 		String[] optionFlavorTexts = { "Hours worked X 2", "Game auto clicks for user",/* "Description of ability 3", "Description of ability 4", "Description of ability 5" */};
 
 		JList optionList = new JList<>(powerUpOptions);
@@ -119,6 +119,9 @@ public class PowerUp {
 			public void actionPerformed(ActionEvent e)
 			{
 				//code to activate power up
+				
+				player.update_PWR_use();
+				
 				String s = String.valueOf("Activate: " + powerUpBox.getSelectedItem());
 				JOptionPane.showMessageDialog(null, s);
 
