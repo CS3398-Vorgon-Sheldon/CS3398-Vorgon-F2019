@@ -55,17 +55,9 @@ public class Player {
         System.out.println("Money: " + money);
     }
 
-    public void update_PWR_use() {
+    public void update_PWR_use() {power_up_used++;}
 
-    	power_up_used++;
-
-    }//end update_PWR_use
-
-    public void updateJobsDone() {
-
-    	jobsDone++;
-
-    }
+    public void updateJobsDone() {jobsDone++;}
 
 
 
@@ -89,8 +81,6 @@ public class Player {
     	name = str;
     }
 
-
-
     /*
     Only called during a reset or "ascension". Adds prestige currency
     should return a value of log(base10)moneyEarned so 10 dollars reset gives 1
@@ -99,10 +89,8 @@ public class Player {
     public void calcPrestige(int moneyEarned){
         int counter = 0;
 
-        while(moneyEarned > 9)
-        {
+        while(moneyEarned > 9){
           moneyEarned = moneyEarned / 10;
-
           counter++;
         }
         prestige = counter;
@@ -119,13 +107,10 @@ public class Player {
     actually with that formula we don't even need the if statement b/c 2^0 = 1
     */
     public void calcClickPower(){
-
-        if(prestige == 0)
-        {
+        if(prestige == 0){
           clickPower = 1;
         }
-        else
-        {
+        else{
           clickPower = 1*prestige; //
         }
     }
@@ -157,11 +142,6 @@ public class Player {
 
 
     public void update(){
-        //if(debug)
-            //System.out.println("Player Update called");
-
     }
-    /*
-    maybe a click modifier
-     */
+
 }

@@ -88,11 +88,11 @@ public class ClientList {
     	String[] clientOptions = { "Classmate's homework", "Dr.Lehr's Sprint",
                     "Design Operating System Simulation", "CS Final Project",
                     "Set up Company's Network" };
-        String[] optionFlavorTexts = { "Jack forgot to do his homework and the due date is upcoming",
-                    "Dr.Lehr assigned another sprint and Jerry needs someone to help him with his part.",
-                    "Dr. Palacios assigned a very vague project one. Work like hell to finish it.",
-                    "Josh is lost in computer architecture, finish his final project so he can pass the course.",
-                    "Enjoy the rest of your life doing CS Stuff" };
+        String[] optionFlavorTexts = { "Jack forgot to do his homework and the due date is upcoming. - Costs: 3 Hours, Reward: $5",
+                    "Dr.Lehr assigned another sprint and Jerry needs someone to help him with his part. - Costs: 10 Hours, Reward: $20",
+                    "Dr. Palacios assigned a very vague project one. Work like hell to finish it. - Costs: 100 Hours, Reward: $400",
+                    "Josh is lost in computer architecture, finish his final project so he can pass the course. - Costs: 1000 Hours, Reward: $10,000",
+                    "Enjoy the rest of your life doing CS Stuff. - Costs: 5000 Hours, Reward: $100,000" };
 
         JList optionList = new JList<>(clientOptions);
 		optionList.setBorder(new LineBorder(Color.DARK_GRAY));
