@@ -1,7 +1,7 @@
 import javax.swing.*;
 import javax.swing.border.LineBorder;
 
-import javafx.scene.Cursor;
+//import javafx.scene.Cursor;
 
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -68,14 +68,19 @@ public class View extends JFrame implements ActionListener {
             public void actionPerformed(ActionEvent e)
             {
                 Sounds.playSound("coin.wav");
-
+                
+                
                 if(PowerUp.powerUp1activated) {
                     c.player.updateWorkHours(2); //Powerup activated = double pay.
                 }
-                else
+                else {
                     c.player.updateWorkHours(1); //No powerup = regular pay.
-                
+                }
                 counterLabel.setText("Work Hours: " + c.player.getWorkHours());
+                //System.out.println("RandomEVENT: " + c.randomevents.event());
+                
+                c.randomevents.event();            	
+
             }
         });
 

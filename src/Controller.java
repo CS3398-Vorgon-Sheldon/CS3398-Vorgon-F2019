@@ -5,7 +5,7 @@ import java.awt.event.MouseListener;
 import java.io.IOException;
 import javax.swing.Timer;
 
-import javafx.scene.Cursor;
+//import javafx.scene.Cursor;
 
 import javax.swing.SwingUtilities;
 
@@ -20,7 +20,8 @@ public class Controller implements MouseListener {
     Stats stats;
     ClientList clientList;
     Achievements achievements;
-
+    RNGEvents randomevents;
+    
     Controller() throws IOException, Exception{
         model = new Model();
         player = new Player();
@@ -30,6 +31,7 @@ public class Controller implements MouseListener {
         stats = new Stats(player);
         clientList = new ClientList();
         achievements = new Achievements();
+        randomevents = new RNGEvents(player);
         
         new Timer(10, view).start();
     }
