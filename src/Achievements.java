@@ -21,7 +21,7 @@ public class Achievements {
 	//get achievements list
 	public int [] workGoal = al.getWhGoals();
 	public int [] jobGoal = al.getJobGoals();
-	public int [] clientGoal = al.getClientsGoals();
+	public int [] clientGoal = al.getPowerUpGoals();
 	public int [] moneyGoal = al.getMoneyGoals();
 	
 	JLabel[] achievementsTextLabel = new JLabel[aList.size()];

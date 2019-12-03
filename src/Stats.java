@@ -32,7 +32,7 @@ public class Stats {
 	//get achievements list
 	public int [] workGoal = al.getWhGoals();
 	public int [] jobGoal = al.getJobGoals();
-	public int [] clientGoal = al.getClientsGoals();
+	public int [] powerUpGoal = al.getPowerUpGoals();
 	public int [] moneyGoal = al.getMoneyGoals();
 	
 	JLabel[] achievementsTextLabel = new JLabel[aList.size()];
@@ -128,11 +128,11 @@ public class Stats {
 /*		statsTextLabel = new JLabel("Total Clients: ");
 		statsTextLabel.setBorder(compound);
 		statsTextLabel.setFont(textFont);
-		statsTextPanel.add(statsTextLabel);
-		statsTextLabel = new JLabel("Jobs Completed: ");
+		statsTextPanel.add(statsTextLabel);*/
+		statsTextLabel = new JLabel("Jobs Completed: " + player.getJobsDone());
 		statsTextLabel.setFont(textFont);
 		statsTextLabel.setBorder(compound);
-		statsTextPanel.add(statsTextLabel); */
+		statsTextPanel.add(statsTextLabel); 
 		statsTextLabel = new JLabel("Power Ups Used: " + player.get_PWR_use());
 		statsTextLabel.setFont(textFont);
 		statsTextLabel.setBorder(compound);
@@ -281,7 +281,33 @@ public class Stats {
 			 counter++;
 			 
 		 }//end work for
-		 		
+		 
+		 counter = 4;
+				 
+		 for(int i = 0; i < powerUpGoal.length; i++) {
+			 
+			 if(player.get_PWR_use() >= powerUpGoal[i]) {
+				 
+					achievementsTextLabel[counter].setForeground(Color.green);
+					achievementsTextLabel[counter].repaint();
+				 
+			 }//end if
+			 
+		 }//end power up for
+		 
+		 counter = 7;
+		 
+		 for(int i = 0; i < jobGoal.length; i++) {
+			 
+			 if(player.getJobsDone() >= jobGoal[i]) {
+				 
+				achievementsTextLabel[counter].setForeground(Color.green);
+				achievementsTextLabel[counter].repaint();
+				 
+			 }//end if
+			 
+		 }//end job for
+		 
 		 counter = 11;
 		 
 		 for(int i = 0; i < moneyGoal.length; i++) {
@@ -293,7 +319,8 @@ public class Stats {
 			 }
 			 
 			 counter++;
-		 }
+			 
+		 }//end for
 		 
 		 
 	}//end update achievements

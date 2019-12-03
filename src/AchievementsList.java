@@ -6,7 +6,7 @@ public class AchievementsList {
 	List<String> aList = new ArrayList<>();
 	
 	private int[] workhourAchievements = {1, 100, 1000, 100000};
-	private int[] ClientsAchievements = {1, 10, 50};
+	private int[] power_upAchievements = {1, 10, 50};
 	private int[] JobsAchievements = {1, 10, 50, 100};
 	private int[] moneyAchievemetns = {25, 100, 250};
 	
@@ -24,10 +24,10 @@ public class AchievementsList {
 		aList.add("Google is my best friend: Complete " + workhourAchievements[2] + " work hour");
 		aList.add("You comment all your functions?: Complete " + workhourAchievements[3] + " work hour");
 		
-		//clients
-		aList.add("Have to start somewhere: Have " + ClientsAchievements[0] + " client");
-		aList.add("There you go!: Have " + ClientsAchievements[1] + " clients");
-		aList.add("Buisness is looking good: Have " + ClientsAchievements[2] + " clients");
+		//Power up
+		aList.add("Have a little taste: Used " + power_upAchievements[0] + " power ups");
+		aList.add("You are zooming: Used " + power_upAchievements[1] + " power ups");
+		aList.add("You addicted?: Used " + power_upAchievements[2] + " power ups");
 		
 		//jobs
 		aList.add("New Guy: Complete " + JobsAchievements[0] + " job");
@@ -52,8 +52,8 @@ public class AchievementsList {
 		return workhourAchievements;
 	}//end
 	
-	public int[] getClientsGoals() {
-		return ClientsAchievements;
+	public int[] getPowerUpGoals() {
+		return power_upAchievements;
 	}//end
 	
 	public int[] getJobGoals() {
