@@ -103,6 +103,11 @@ Sprint 2:
 * Achievements list implementation. Create achievements list for the player to complete. Code is found is the src folder as AchievementsList.java 
 * Feature: Get the achievements to update whenever the player completes it. It changes from red text to green text when achievement is completed.
 
+Sprint 3:
+* Random events implementation. Whenever the player clicks the keyboard there is a chance that they could be loss or gain money/work hours
+  * Code is found in the src folder as RNGEvents.
+* Clean up code from achivements.java and achivementsList.java found in src
+
 #### Sergio
 Sprint 1:
 * Level calculation. Fuction calculates players level and updates continuously as player clicks.
@@ -117,7 +122,7 @@ Sprint 2:
 ## Status
 Polish has been added to our game's code and foundation. More features have been added on to improve the game. Improvements are to be made by ironing out any issues that arise and to continue adding new content.
 
-* Miguel - Next step would be to implement random objects that could help or hurt the player.
+* Miguel - Next step would be to add more color to the game.
 
 * Hugo - Redoing the "Client" Classes to function properly as it serves a key feature of the primary core loop.
 
