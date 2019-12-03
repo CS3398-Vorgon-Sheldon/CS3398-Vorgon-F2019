@@ -23,33 +23,13 @@ public class ClientList {
 
     Client[] clients = new Client[clientLength];
 
+    Player player;
+    View view;
 
 //manually setting the clients since I can't get the File Reader to work
-    public void ClientList() throws Exception {
-        clients[0].setTitle("Classmate's homework");
-        clients[0].setPayment(5);
-        clients[0].setHourPay(3);
-        clients[0].setFlavorText("Jack forgot to do his homework and the due date is upcoming");
-
-        clients[1].setTitle("Dr.Lehr's Sprint");
-        clients[1].setPayment(20);
-        clients[1].setHourPay(10);
-        clients[1].setFlavorText("Dr.Lehr assigned another sprint and Jerry needs someone to help him with his part.");
-
-        clients[2].setTitle("Design Operating System Simulation");
-        clients[2].setPayment(400);
-        clients[2].setHourPay(100);
-        clients[2].setFlavorText("Dr. Palacios assigned a very vague project one. Work like hell to finish it.");
-
-        clients[3].setTitle("CS Final Project");
-        clients[3].setPayment(10000);
-        clients[3].setHourPay(1000);
-        clients[3].setFlavorText("Josh is lost in computer architecture, finish his final project so he can pass the course.");
-
-        clients[4].setTitle("Set up Company's Network");
-        clients[4].setPayment(100000);
-        clients[4].setHourPay(5000);
-        clients[4].setFlavorText("Enjoy the rest of your life doing CS Stuff");
+    public ClientList(Player player, View view) {
+      this.player = player;
+      this.view = view;
     }
 
 //This is supposed to utilize a file reader to read individual lines off of a text file but
@@ -105,9 +85,15 @@ public class ClientList {
     	rightPanel.setBackground(Color.white);
 
     	// Shop Options
-    	String[] clientOptions = { "Client 1", "Client 2", "Client 3", "Client 4", "Client 5" };
-        String[] optionFlavorTexts = { "Job Description 1", "Job Description 2", "Job Description 3", "Job Description 4", "Job Description 5" };
-        
+    	String[] clientOptions = { "Classmate's homework", "Dr.Lehr's Sprint",
+                    "Design Operating System Simulation", "CS Final Project",
+                    "Set up Company's Network" };
+        String[] optionFlavorTexts = { "Jack forgot to do his homework and the due date is upcoming",
+                    "Dr.Lehr assigned another sprint and Jerry needs someone to help him with his part.",
+                    "Dr. Palacios assigned a very vague project one. Work like hell to finish it.",
+                    "Josh is lost in computer architecture, finish his final project so he can pass the course.",
+                    "Enjoy the rest of your life doing CS Stuff" };
+
         JList optionList = new JList<>(clientOptions);
 		optionList.setBorder(new LineBorder(Color.DARK_GRAY));
 		optionList.setFont(new Font("Arial", Font.PLAIN, 20));
@@ -120,7 +106,7 @@ public class ClientList {
 		flavorTextPane.setFont(new Font("Arial", Font.PLAIN, 20));
 		flavorTextPane.setEditable(false);
 		flavorTextPane.setText("\n" + optionFlavorTexts[0]);
-		
+
 		StyledDocument doc = flavorTextPane.getStyledDocument();
 		SimpleAttributeSet center = new SimpleAttributeSet();
 		StyleConstants.setAlignment(center, StyleConstants.ALIGN_CENTER);
@@ -162,21 +148,62 @@ public class ClientList {
             }
 		});
 
-		JButton hireButton = new JButton("Hire");
+		JButton hireButton = new JButton("Work");
         hireButton.setBackground(Color.BLUE);
         hireButton.setForeground(Color.white);
 		hireButton.setBorder(new LineBorder(Color.DARK_GRAY));
 		hireButton.setPreferredSize(new Dimension(60, 40));
 		hireButton.setFont(new Font("Arial", Font.PLAIN, 20));
         hireButton.setFocusPainted(false);
-        
+
         hireButton.addActionListener(new ActionListener()
 	    {
             public void actionPerformed(ActionEvent e)
             {
-                //code to hire client
-				String s = String.valueOf("Hire: " + clientBox.getSelectedItem());
-				JOptionPane.showMessageDialog(null, s);
+
+               String s = String.valueOf("Completed: " + clientBox.getSelectedItem());
+               int cost   = 0;
+               int payout = 0;
+
+               if(s.equals("Completed: Classmate's homework")){
+                 cost = 3;
+                 payout = 5;
+               }
+               else if(s.equals("Completed: Dr.Lehr's Sprint")){
+                 cost = 10;
+                 payout = 20;
+               }
+               else if(s.equals("Completed: Design Operating System Simulation")){
+                 cost = 100;
+                 payout = 400;
+               }
+               else if(s.equals("Completed: CS Final Project")){
+                 cost = 1000;
+                 payout = 10000;
+               }
+               else if(s.equals("Completed: Set up Company's Network")){
+                 cost = 5000;
+                 payout = 100000;
+               }
+
+
+               if(player.getWorkHours() < cost) {
+
+                 JOptionPane.showMessageDialog(null, "Not Enough Hours");
+
+               }
+
+               else {
+                 cost = cost *-1;
+                 player.updateWorkHours(cost);
+                 player.updateMoney(payout);
+
+                 //moneyLabel.setText("Current Funds: $" + player.getMoney());
+
+
+                 JOptionPane.showMessageDialog(null, s);
+
+              }
             }
 	    });
 

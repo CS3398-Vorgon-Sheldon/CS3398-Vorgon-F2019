@@ -21,7 +21,7 @@ public class Controller implements MouseListener {
     ClientList clientList;
     Achievements achievements;
     RNGEvents randomevents;
-    
+
     Controller() throws IOException, Exception{
         model = new Model();
         player = new Player();
@@ -29,10 +29,10 @@ public class Controller implements MouseListener {
         shop = new Shop(player, view);
         powerUp = new PowerUp(player);
         stats = new Stats(player);
-        clientList = new ClientList();
+        clientList = new ClientList(player, view);
         achievements = new Achievements();
         randomevents = new RNGEvents(player);
-        
+
         new Timer(10, view).start();
     }
 
