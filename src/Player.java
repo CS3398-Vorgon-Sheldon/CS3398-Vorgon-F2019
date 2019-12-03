@@ -20,6 +20,7 @@ public class Player {
     private boolean debug = true;
     private int clickPower;
     private int power_up_used;
+    private int jobsDone;
     Timer timer;
 
     Player(){
@@ -28,6 +29,7 @@ public class Player {
         clickPower = 1;
         level = 1;                                           //level will unlock the powerups you can buy in shop
         power_up_used = 0;
+        jobsDone = 0;
         name = "Player";
     }
 
@@ -54,18 +56,20 @@ public class Player {
     }
 
     public void update_PWR_use() {
-    	
+
     	power_up_used++;
-    	
+
     }//end update_PWR_use
-    
-    public int get_PWR_use() {
-    	
-    	return power_up_used;
-    	
-    }//end update_PWR_use
-    
-    
+
+    public void updateJobsDone() {
+
+    	jobsDone++;
+
+    }
+
+
+
+
 
     public void updateLevel(int hrs) {                    //updates and calculates for next level
     	int xpNeeded = ((level * level) * 50);
@@ -79,10 +83,10 @@ public class Player {
     public void displayLevel(){
         System.out.println("Current Level: " + level);
     }
-    
+
     public void setName(String str)
     {
-    	name = str; 
+    	name = str;
     }
 
 
@@ -146,7 +150,8 @@ public class Player {
     public int getLevel(){ return level; }
     public int getClickPower() { return clickPower; }
     public String getName(){ return name;}
-
+    public int get_PWR_use() { return power_up_used; }
+    public int getJobsDone() { return jobsDone; }
 //setters
     public void setClickPower(int count) {clickPower = count;}
 

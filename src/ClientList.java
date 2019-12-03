@@ -197,6 +197,7 @@ public class ClientList {
                  cost = cost *-1;
                  player.updateWorkHours(cost);
                  player.updateMoney(payout);
+                 player.updateJobsDone();
 
                  //moneyLabel.setText("Current Funds: $" + player.getMoney());
 
