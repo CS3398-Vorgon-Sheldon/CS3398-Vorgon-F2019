@@ -111,13 +111,18 @@ Sprint 3:
 #### Sergio
 Sprint 1:
 * Level calculation. Fuction calculates players level and updates continuously as player clicks.
- * See Research/PlayerProgressionResearch.txt
+  * See Research/PlayerProgressionResearch.txt
 * Implementation of visual representation of Level status into top panel of Game HUD.
 * Implemented Images for GUI by resizing and positioning within each appropriate panel of GUI. 
 
 Sprint 2:
 * Created the base structure and GUI design for the stats page. This page has three sections to it for the user to flip thorugh such as stats, achievements, and leaderboard. This was implemented in the "Updates to stats page ui" commit in github.
 * Creted and implemented a fuctioning leaderboard to the stats page. This is used to an arcade style ranking to the players in the application. This is seen in the "Leaderboard Added to Stats Page" commit in github.
+
+Sprint 3:
+* Refactored code from Stats file and created Leaderboard class outside of stats.
+  * See leaderboard in src folder.
+* The Updated leaderboard and stats page of program.
 
 ## Status
 Polish has been added to our game's code and foundation. More features have been added on to improve the game. Improvements are to be made by ironing out any issues that arise and to continue adding new content.
@@ -130,4 +135,4 @@ Polish has been added to our game's code and foundation. More features have been
 
 * Nigel - Next step would be to implement a wider genre of sounds for the current and future buttons. I will also be implementing a method that will boost possible points earned for a limited amount of time.
 
-* Sergio - Next step would to add save/load file functionality so that players can continue their games after closing the application.
+* Sergio - Next step would to use the leaderboard class to create distinct leaderboards that player can use to see their rank.
