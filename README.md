@@ -42,17 +42,24 @@ Sprint 2:
     * List can be seen in src/clientList.txt
 * Have a list on how to implement the save/load function but it cannot be integrated as of yet.
 
+Sprint 3:
+* Refactored the ClientList class; Redid the ClientList and moved some of the hard coded bits into places to save space and designation.
+    * Code is located in the src/ClientList.Java
+* Save/Load was unfortunately unfinished. I have multiple versions on my home repository but they do not work as intended perhaps with a final sprint it would but for now I did not merge to master
+* Finalized the client list; Starting from early drafts but worked into the 5 we have now.
+    * You can view them at clientList.txt
+
 #### Nigel
 Sprint 1:
-* Implement application background music. Music plays in the background through out the game. 
+* Implement application background music. Music plays in the background through out the game.
     * Code is located in the src/Sounds.java file.
-* Research Powerups - Discover fun powerups to add to our application. 
+* Research Powerups - Discover fun powerups to add to our application.
 
 
 Sprint 2:
-* Create Powerups - Powerups have been created to enhance the game's fun. Powerups allow the user to earn points faster. 
+* Create Powerups - Powerups have been created to enhance the game's fun. Powerups allow the user to earn points faster.
     * Code is located in the src/Powerup.java file.
-* Created button sound effects. Special sound effects are played when certain buttons are pressed. 
+* Created button sound effects. Special sound effects are played when certain buttons are pressed.
     * Code is located in the files src/Sounds.java
 
 
@@ -100,7 +107,7 @@ Sprint 1:
 Sprint 2:
 * Stats implementation. Player can keep up with their stats; Code is found in the src folder as Stats.java
 * Achievements implementation. Player can view their progress by completing achievements. Code is found is the src folder as Achievements.java
-* Achievements list implementation. Create achievements list for the player to complete. Code is found is the src folder as AchievementsList.java 
+* Achievements list implementation. Create achievements list for the player to complete. Code is found is the src folder as AchievementsList.java
 * Feature: Get the achievements to update whenever the player completes it. It changes from red text to green text when achievement is completed.
 
 Sprint 3:
@@ -113,7 +120,7 @@ Sprint 1:
 * Level calculation. Fuction calculates players level and updates continuously as player clicks.
  * See Research/PlayerProgressionResearch.txt
 * Implementation of visual representation of Level status into top panel of Game HUD.
-* Implemented Images for GUI by resizing and positioning within each appropriate panel of GUI. 
+* Implemented Images for GUI by resizing and positioning within each appropriate panel of GUI.
 
 Sprint 2:
 * Created the base structure and GUI design for the stats page. This page has three sections to it for the user to flip thorugh such as stats, achievements, and leaderboard. This was implemented in the "Updates to stats page ui" commit in github.
@@ -124,7 +131,7 @@ Polish has been added to our game's code and foundation. More features have been
 
 * Miguel - Next step would be to add more color to the game.
 
-* Hugo - Redoing the "Client" Classes to function properly as it serves a key feature of the primary core loop.
+* Hugo - A next step would be to balance the numbers for the current game. Lower the middle rewards and add a clear progression pace.
 
 * Joey - Next step would be to add more content, such as more shop items and rewards. Also to iron out any issues to make a smoother user experience.
 
